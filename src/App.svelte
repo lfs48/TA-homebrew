@@ -2,6 +2,7 @@
 
 <script>
   import art from './assets/images/coach.png'
+  import { AuctionFillFinance, MedalLineBusiness } from 'svelte-remix';
 </script>
 
 {#snippet question(num, question, optA, qualA, optB, qualB)}
@@ -67,112 +68,122 @@
             </div>
           </div>
         </div>
-        <img src={art} class="w-[25rem] h-[37.5rem]"/>
+        <img alt='' src={art} class="w-[25rem] h-[37.5rem]"/>
       </div>
     </div>
     <div class="basis-1/2 flex">
       <div class="flex flex-col">
-        <section class="basis-1/5 flex flex-col justify-center border-b-2 border-pale-blue-gray pl-20 space-y-1.5">
-          <h3 class="font-bold">Prime Directive</h3>
-          <h2>Don't let them get complacent.</h2>
-          <span>
-            <b>Each time you give a compliment,</b> receive <b>1 Demerit.</b>
-          </span>
+        <section class="basis-[20%] relative flex flex-col border-b-2 border-pale-blue-gray pl-20">
+          <div class="py-12 space-y-1.5">
+            <h3 class="font-bold">Prime Directive</h3>
+            <h2>Don't let them get complacent.</h2>
+            <span>
+              <b>Each time you give a compliment,</b> receive <b>1 Demerit.</b>
+            </span>
+        </div>
+          <AuctionFillFinance transform="scale(-1, 1)" class="absolute top-[0.25rem] right-[4rem] w-32 h-32 text-agency-red-light z-[-1]" />
         </section>
-        <div class="basis-[30%] flex border-b-2 border-pale-blue-gray">
-          <section class="basis-1/2 border-r-2 border-pale-blue-gray pl-20 py-10 pr-8 space-y-2">
-            <h3>Sanctioned Behaviors</h3>
-            <p>Receive <b>1 Commendation</b> each time you:</p>
-            <ul class="space-y-1 pb-2 [&>li]:flex [&>li]:space-x-2">
-              <li>
-                <p class="text-agency-red text-[0.5rem]">▶</p>
-                <p class="text-agency-red">Reject an excuse.</p>
-              </li>
-              <li>
-                <p class="text-agency-red text-[0.5rem]">▶</p>
-                <p class="text-agency-red">Point out a deficiency.</p>
-              </li>
-              <li>
-                <p class="text-agency-red text-[0.5rem]">▶</p>
-                <p class="text-agency-red">Push something past its limits.</p>
-              </li>
-            </ul>
-            <p>
-              If you complete each Sanctioned Behavior<br>
-              at least once during a mission, you<br>
-              receive a bonus of <b><red>3</red> Commendations</b><br>
-              after superlatives have been awarded.
-            </p>
+        <div class="basis-[28%] flex border-b-2 border-pale-blue-gray">
+          <section class="basis-1/2 relative border-r-2 border-pale-blue-gray pl-20">
+            <div class="py-10 space-y-2">
+              <h3>Sanctioned Behaviors</h3>
+              <p class="pb-1">Receive <b>1 Commendation</b> each time you:</p>
+              <ul class="w-36 space-y-1 pb-2 [&>li]:flex [&>li]:space-x-2 z-10">
+                <li>
+                  <p class="text-agency-red text-[0.5rem]">▶</p>
+                  <p class="text-agency-red">Reject an excuse.</p>
+                </li>
+                <li>
+                  <p class="text-agency-red text-[0.5rem]">▶</p>
+                  <p class="text-agency-red">Point out a deficiency.</p>
+                </li>
+                <li>
+                  <p class="text-agency-red text-[0.5rem]">▶</p>
+                  <p class="text-agency-red">Push something past its limits.</p>
+                </li>
+              </ul>
+              <p>
+                If you complete each Sanctioned Behavior<br>
+                at least once during a mission, you<br>
+                receive a bonus of <b><red>3</red> Commendations</b><br>
+                after superlatives have been awarded.
+              </p>
+            </div>
+            <MedalLineBusiness class="absolute top-[4.5rem] right-[3rem] w-32 h-32 text-agency-red-light z-[-1]" />
           </section>
-          <section class="basis-1/2 px-8 py-10 space-y-4">
-            <h3 class="font-bold">
-              Initial Requisition:<br>
-              Motivational Pamphlet
-            </h3>
-            <p>
-              This little pocket-sized booklet contains a 
-              limitless inventory of tautological statements
-              and fabricated anecdotes. Once per mission, 
-              you can read one off to another person 
-              while discussing a physical task that they 
-              normally wouldn’t be able to perform, 
-              such as walking across lava or 
-              flirting with an attractive person. 
-              They will succeed at that task the next time
-              they attempt it today. Any injury they might 
-              incur while performing that task is 
-              deferred until the task is completed.
-            </p>
+          <section class="basis-1/2 px-8">
+            <div class="py-10 space-y-4">
+              <h3 class="font-bold">
+                Initial Requisition:<br>
+                Motivational Pamphlet
+              </h3>
+              <p>
+                This little pocket-sized booklet contains a 
+                limitless inventory of tautological statements
+                and fabricated anecdotes. Once per mission, 
+                you can read one off to another person 
+                while discussing a physical task that they 
+                normally wouldn’t be able to perform, 
+                such as walking across lava or 
+                flirting with an attractive person. 
+                They will succeed at that task the next time
+                they attempt it today. Any injury they might 
+                incur while performing that task is 
+                deferred until the task is completed.
+              </p>
+            </div>
           </section>
         </div>
         <section class="flex flex-col">
-          <article class="basis-1/2 flex py-8">
-            <div class="basis-1/2 pl-20 pr-10 space-y-5">
-              <h2>Self-Assessment</h2>
-              <p>
-                Please answer the following questions<br>
-                and increase your maximum Quality<br>
-                Assurances by <red>3</red> in the Qualities<br>
-                corresponding to your answers.<br>
-                <br>
-                When you begin your first mission,<br>
-                you will have a total of nine Quality<br>
-                Assurances available to you. Quality<br>
-                Assurances return to their current<br>
-                maximum at the end of each mission.<br>
-                <br>
-                Afterwards, please provide your GM<br>
-                with a short description of the work<br>
-                you'd most like to do within this<br>
-                department and any requests for<br>
-                specific supervisors or coworkers.<br>
-              </p>
-            </div>
-            <div class="basis-1/2 -mx-4 flex flex-col pr-4 space-y-8">
-              {@render question(
-                1,
-                'When I see someone stumble, I…',
-                'Encourage them to watch their step by building pit traps throughout the office.',
-                'Persistence',
-                'Commandeer their legs to ensure it won’t happen again.',
-                'Dynamism',
-              )}
-              {@render question(
-                2,
-                'I celebrate my team’s big wins by…',
-                'Updating next month’s quotas to reflect the increase in productivity.',
-                'Initiative',
-                'Publicly shaming the losers.',
-                'Presence',
-              )}
-              {@render question(
-                3,
-                'The one thing all successful people share in common is…',
-                'A dedication to hard work and self improvement.',
-                'Duplicity',
-                'Success',
-                'Attentiveness',
-              )}
+          <article class="basis-1/2">
+            <div class="flex py-10">
+              <div class="basis-1/2 pl-20 pr-10 space-y-5">
+                <h2>Self-Assessment</h2>
+                <p>
+                  Please answer the following questions<br>
+                  and increase your maximum Quality<br>
+                  Assurances by <red>3</red> in the Qualities<br>
+                  corresponding to your answers.<br>
+                  <br>
+                  When you begin your first mission,<br>
+                  you will have a total of nine Quality<br>
+                  Assurances available to you. Quality<br>
+                  Assurances return to their current<br>
+                  maximum at the end of each mission.<br>
+                  <br>
+                  Afterwards, please provide your GM<br>
+                  with a short description of the work<br>
+                  you'd most like to do within this<br>
+                  department and any requests for<br>
+                  specific supervisors or coworkers.<br>
+                </p>
+              </div>
+              <div class="basis-1/2 -mx-4 flex flex-col pr-4 space-y-8">
+                {@render question(
+                  1,
+                  'When I see someone stumble, I…',
+                  'Encourage them to watch their step by building pit traps throughout the office.',
+                  'Persistence',
+                  'Commandeer their legs to ensure it won’t happen again.',
+                  'Dynamism',
+                )}
+                {@render question(
+                  2,
+                  'I celebrate my team’s big wins by…',
+                  'Updating next month’s quotas to reflect the increase in productivity.',
+                  'Initiative',
+                  'Publicly shaming the losers.',
+                  'Presence',
+                )}
+                {@render question(
+                  3,
+                  'The one thing all successful people share in common is…',
+                  'A dedication to hard work and self improvement.',
+                  'Duplicity',
+                  'Success',
+                  'Attentiveness',
+                )}
+              </div>
             </div>
           </article>
           <article class="flex justify-center items-center h-16 ml-20 mr-8 border-2 border-agency-red rounded-[1rem] text-bold text-[1.25rem] font-urw">
