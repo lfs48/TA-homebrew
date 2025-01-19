@@ -3,6 +3,99 @@
 <script>
   import art from './assets/images/coach.png'
   import { AuctionFillFinance, MedalLineBusiness } from 'svelte-remix';
+
+  const title = 'Coach';
+  const tagline = 'No pain, no gain';
+  const description = `
+    Research has shown that most employees
+    only expend <red>3</red>0-70% of available
+    time and effort in their work, due to
+    psychological barriers such as
+    “exhaustion” or “the stress coefficient
+    of human bones”. Coaches are tasked with
+    liberating their fellow employees from
+    these mental blockers so that they
+    can achieve their true potential.
+    <br>
+    <br>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  `;
+
+  const tableTtitle = 'Placeholder';
+  const tableDesc = 'Placeholder';
+  const tableOptions = [
+    'Pushups',
+    'Deadlifts',
+    'Squats',
+    'Kegels',
+  ];
+
+  const directive = `Don't let them get complacent.`;
+  const demeritTrigger = 'Each time you give a compliment';
+
+  const sanctioned = [
+    'Reject an excuse',
+    'Identify a deficiency',
+    'Push something past its limits',
+  ];
+
+  const requisitionName = 'Motivational Pamphlet';
+  const requisitionDesc = `
+    This little pocket-sized booklet contains a 
+    limitless inventory of tautological statements
+    and fabricated anecdotes. Once per mission, 
+    you can read one off to another person 
+    while discussing a physical task that they 
+    normally wouldn’t be able to perform, 
+    such as walking across lava or 
+    flirting with an attractive person. 
+    They will succeed at that task the next time
+    they attempt it today. Any injury they might 
+    incur while performing that task is 
+    deferred until the task is completed.
+  `;
+
+  const assessment = [
+    {
+      q: `When I see someone stumble, I...`,
+      answerA: `
+        Encourage them to watch their step by building
+        pit traps throughout the office.
+      `,
+      qualityA: 'Persistence',
+      answerB: `
+        Help them get back up and running by chasing
+        after them with an axe.
+      `,
+      qualityB: 'Dynamism',
+    },
+    {
+      q: `I celebrate my team's big wins by...`,
+      answerA: `
+        Updating next month's quotas to reflect the increase<br>
+        in productivity.
+      `,
+      qualityA: 'Initiative',
+      answerB: `
+        Publicly ridiculing the losers.
+      `,
+      qualityB: `Presence`,
+    },
+    {
+      q: `
+        The one thing all successful people share<br>
+        in common is...
+      `,
+      answerA: `
+        A dedication to hard work and self improvement.<br>
+      `,
+      qualityA: 'Duplicity',
+      answerB: `Success.`,
+      qualityB: 'Attentiveness.',
+    },
+  ];
+
+  const quote = 'JUST. DO. IT.'
 </script>
 
 {#snippet question(num, question, optA, qualA, optB, qualB)}
@@ -11,15 +104,15 @@
       <div class="flex justify-center items-center w-8 h-8 rounded-full bg-agency-red text-white text-[1.5rem] font-bold font-poppins">{num}</div>
     </div>
     <div class="flex flex-col space-y-2">
-      <p class="font-bold">{question}</p>
+      <p class="font-bold">{@html question}</p>
       <ul class="space-y-1">
         <li class="flex space-x-2">
           <p class="text-agency-red text-[0.5rem]">▶</p>
-          <p class="leading-[0.85rem]">{optA} (<strong>+<red>3</red> {qualA}</strong>)</p>
+          <p class="leading-[0.85rem]">{@html optA} (<strong>+<red>3</red> {qualA}</strong>)</p>
         </li>
         <li class="flex space-x-2">
           <p class="text-agency-red text-[0.5rem]">▶</p>
-          <p>{optB} (<strong>+<red>3</red> {qualB}</strong>)</p>
+          <p>{@html optB} (<strong>+<red>3</red> {qualB}</strong>)</p>
         </li>
       </ul>
     </div>
@@ -29,27 +122,16 @@
 <article class="flex w-screen h-screen tracking-[-0.012rem]">
   <div class="flex">
     <div class="basis-1/2 pl-24 py-10">
-      <h1 class="pb-4">Coach</h1>
+      <h1 class="pb-4">{title}</h1>
       <div class="flex">
         <div class="space-y-4">
           <h2>COMPETENCY</h2>
-          <h2>No pain, no gain.</h2>
+          <h2>{tagline}</h2>
           <p class="w-80">
-            Research has shown that most employees
-            only expend <red>3</red>0-70% of available
-            time and effort in their work, due to
-            psychological barriers such as
-            “exhaustion” or “the stress coefficient
-            of human bones”. Coaches are tasked with
-            liberating their fellow employees from
-            these mental blockers so that they
-            can achieve their true potential.
-            <br>
-            <br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            {@html description}
           </p>
-          <h3>Most Important Meal</h3>
-          <p class="w-60">Choose a go-to warmup excercise by rolling on the table below or creating your own.</p>
+          <h3>{tableTtitle}</h3>
+          <p class="w-60">{@html tableDesc}</p>
           <div class="flex w-60 border-2 border-agency-red rounded-[1rem] [&>*>h3]:p-2 [&>*>h3]:border-b [&>*>h3]:border-agency-red [&>*>h3:last-child]:border-b-0">
             <div class="basis-1/5 flex flex-col border-r border-agency-red [&>h3]:flex [&>h3]:justify-center [&>h3]:items-center">
               <h3 class="bg-agency-red-light rounded-tl-[0.9rem] font-poppins">1</h3>
@@ -58,10 +140,10 @@
               <h3 class="font-poppins">4</h3>
             </div>
             <div class="basis-4/5 flex flex-col">
-              <h3 class="bg-agency-red-light rounded-tr-[0.9rem]">Pushups</h3>
-              <h3 class="">Pelvic Thrusts</h3>
-              <h3 class=" bg-agency-red-light">Deadlifts</h3>
-              <h3 class="">Planking</h3>
+              <h3 class="bg-agency-red-light rounded-tr-[0.9rem]">{tableOptions[0]}</h3>
+              <h3 class="">{tableOptions[1]}</h3>
+              <h3 class=" bg-agency-red-light">{tableOptions[2]}</h3>
+              <h3 class="">{tableOptions[3]}</h3>
             </div>
           </div>
         </div>
@@ -73,9 +155,9 @@
         <section class="basis-[20%] relative flex flex-col border-b-2 border-pale-blue-gray pl-20">
           <div class="pt-12 space-y-1.5">
             <h3 class="font-bold">Prime Directive</h3>
-            <h2 class="pb-2">Don't let them get complacent.</h2>
+            <h2 class="pb-2">{directive}</h2>
             <span class="text-deep-purple">
-              <b>Each time you give a compliment,</b> receive <b>1 Demerit.</b>
+              <b>{demeritTrigger},</b> receive <b>1 Demerit.</b>
             </span>
         </div>
           <AuctionFillFinance transform="scale(-1, 1)" class="absolute top-[1rem] right-[4rem] w-32 h-32 text-agency-red-light z-[-1]" />
@@ -88,15 +170,15 @@
               <ul class="w-36 space-y-1 pb-2 [&>li]:flex [&>li]:space-x-2 z-10">
                 <li>
                   <p class="text-agency-red text-[0.5rem]">▶</p>
-                  <p class="text-agency-red">Reject an excuse.</p>
+                  <p class="text-agency-red">{sanctioned[0]}</p>
                 </li>
                 <li>
                   <p class="text-agency-red text-[0.5rem]">▶</p>
-                  <p class="text-agency-red">Point out a deficiency.</p>
+                  <p class="text-agency-red">{sanctioned[1]}</p>
                 </li>
                 <li>
                   <p class="text-agency-red text-[0.5rem]">▶</p>
-                  <p class="text-agency-red">Push something past its limits.</p>
+                  <p class="text-agency-red">{sanctioned[2]}</p>
                 </li>
               </ul>
               <p>
@@ -112,28 +194,17 @@
             <div class="py-8 space-y-4">
               <h3 class="font-bold">
                 Initial Requisition:<br>
-                Motivational Pamphlet
+                {requisitionName}
               </h3>
               <p>
-                This little pocket-sized booklet contains a 
-                limitless inventory of tautological statements
-                and fabricated anecdotes. Once per mission, 
-                you can read one off to another person 
-                while discussing a physical task that they 
-                normally wouldn’t be able to perform, 
-                such as walking across lava or 
-                flirting with an attractive person. 
-                They will succeed at that task the next time
-                they attempt it today. Any injury they might 
-                incur while performing that task is 
-                deferred until the task is completed.
+                {@html requisitionDesc}
               </p>
             </div>
           </section>
         </div>
         <section class="basis-[50%] flex flex-col">
           <article class="basis-1/2">
-            <div class="flex pt-8 pb-2">
+            <div class="flex pt-8">
               <div class="basis-1/2 pl-20 pr-10 space-y-5">
                 <h2>Self-Assessment</h2>
                 <p>
@@ -156,42 +227,28 @@
                 </p>
               </div>
               <div class="basis-1/2 -mx-4 flex flex-col pr-4 space-y-4">
-                {@render question(
-                  1,
-                  'When I see someone stumble, I…',
-                  'Encourage them to watch their step by building pit traps throughout the office.',
-                  'Persistence',
-                  'Help them get back up and running by chasing after them with an axe.',
-                  'Dynamism',
-                )}
-                {@render question(
-                  2,
-                  'I celebrate my team’s big wins by…',
-                  'Updating next month’s quotas to reflect the increase in productivity.',
-                  'Initiative',
-                  'Publicly shaming the losers.',
-                  'Presence',
-                )}
-                {@render question(
-                  3,
-                  'The one thing all successful people share in common is…',
-                  'A dedication to hard work and self improvement.\n\n',
-                  'Duplicity',
-                  'Success',
-                  'Attentiveness',
-                )}
+                {#each assessment as ass, i}
+                  {@render question(
+                    i+1,
+                    ass.q,
+                    ass.answerA,
+                    ass.qualityA,
+                    ass.answerB,
+                    ass.qualityB,
+                  )}
+                {/each}
               </div>
             </div>
           </article>
           <article class="flex items-center w-full h-full pl-20 pr-8">
             <div class="flex justify-center items-center w-full h-16 border-2 border-agency-red rounded-[1rem] text-bold text-[1.25rem] font-urw">
-              "JUST. DO. IT."
+              {quote}
             </div>
           </article>
         </section>
       </div>
       <aside class="flex bg-agency-red w-32 h-full text-vertical pt-10 px-2">
-        <div class="flex items-center text-white font-bold font-urw text-[1.5rem]">Competency ▾ Coach</div>
+        <div class="flex items-center text-white font-bold font-urw text-[1.5rem]">Competency ▾ {title}</div>
       </aside>
     </div>
   </div>
