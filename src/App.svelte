@@ -2,27 +2,40 @@
 
 <script>
   import art from './assets/images/coach.png'
-  import { AuctionFillFinance, MedalLineBusiness } from 'svelte-remix';
+  import { AuctionFillFinance, MedalLineBusiness, TriangleFillDesign } from 'svelte-remix';
 
   const title = 'Coach';
-  const tagline = 'No pain, no gain';
+  const tagline = 'No pain, no gain.';
   const description = `
     Research has shown that most employees
     only expend <red>3</red>0-70% of available
     time and effort in their work, due to
-    psychological barriers such as
-    “exhaustion” or “the stress coefficient
-    of human bones”. Coaches are tasked with
-    liberating their fellow employees from
-    these mental blockers so that they
-    can achieve their true potential.
+    psychological barriers such as “exhaustion” 
+    or “the stress coefficient of human bones”.
+    <red>Agency</red> Coaches are tasked with liberating
+    their coworkers from these mental blockers 
+    so that they unlock their true potential
+    and maximize their revenue generation. 
+    They work tirelessly toward the success of others
+    by designing training regimens, monitoring performance 
+    metrics, and refusing to tolerate mediocrity.
     <br>
     <br>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    While many Coaches fuffill the role in a 
+    traditional sense by managing the physical fitness
+    of their team, they also fill a wide variety of other 
+    <red>Agency</red> positions.
+    Many of our  dieticians, algebra tutors, 
+    and podcast hosts are recognized as Coaches.
+    Whether you're eyeing the gym or coference podium, 
+    our Coaching department welcomes anyone
+    with the courage to put those coddled slackers to work.
   `;
 
-  const tableTtitle = 'Placeholder';
-  const tableDesc = 'Placeholder';
+  const tableTtitle = 'Give Me Twenty';
+  const tableDesc = `
+    Choose your favorite warmup exercise by rolling on
+    the table below or creating your own.`;
   const tableOptions = [
     'Pushups',
     'Deadlifts',
@@ -30,13 +43,13 @@
     'Kegels',
   ];
 
-  const directive = `Don't let them get complacent.`;
+  const directive = `No complacency.`;
   const demeritTrigger = 'Each time you give a compliment';
 
   const sanctioned = [
-    'Reject an excuse',
-    'Identify a deficiency',
-    'Push something past its limits',
+    'Reject an excuse.',
+    'Identify a deficiency.',
+    'Push something past its limits.',
   ];
 
   const requisitionName = 'Motivational Pamphlet';
@@ -47,7 +60,7 @@
     you can read one off to another person 
     while discussing a physical task that they 
     normally wouldn’t be able to perform, 
-    such as walking across lava or 
+    such as walking across water or 
     flirting with an attractive person. 
     They will succeed at that task the next time
     they attempt it today. Any injury they might 
@@ -65,7 +78,7 @@
       qualityA: 'Persistence',
       answerB: `
         Help them get back up and running by chasing
-        after them with an axe.
+        after them with a knife.
       `,
       qualityB: 'Dynamism',
     },
@@ -95,7 +108,7 @@
     },
   ];
 
-  const quote = 'JUST. DO. IT.'
+  const quote = `"JUST. DO. IT."`;
 </script>
 
 {#snippet question(num, question, optA, qualA, optB, qualB)}
@@ -112,7 +125,7 @@
         </li>
         <li class="flex space-x-2">
           <p class="text-agency-red text-[0.5rem]">▶</p>
-          <p>{@html optB} (<strong>+<red>3</red> {qualB}</strong>)</p>
+          <p class="leading-[0.85rem]">{@html optB} (<strong>+<red>3</red> {qualB}</strong>)</p>
         </li>
       </ul>
     </div>
@@ -125,9 +138,12 @@
       <h1 class="pb-4">{title}</h1>
       <div class="flex">
         <div class="space-y-4">
-          <h2>COMPETENCY</h2>
+          <h2 class="relative">
+            <span class="text-white text-[1.5rem] pl-[0.75rem]">C<red class="ml-[0.11rem]">OMPETENCY</red></span>
+            <TriangleFillDesign class="absolute -top-[0.6rem] w-[2.75rem] h-[2.75rem] text-agency-red z-[-1]" />
+          </h2>
           <h2>{tagline}</h2>
-          <p class="w-80">
+          <p class="w-72">
             {@html description}
           </p>
           <h3>{tableTtitle}</h3>
@@ -188,7 +204,7 @@
                 after superlatives have been awarded.
               </p>
             </div>
-            <MedalLineBusiness class="absolute top-[4.5rem] right-[2.5rem] w-32 h-32 text-agency-red-light z-[-1]" />
+            <MedalLineBusiness class="absolute top-[4rem] right-[2.5rem] w-32 h-32 text-agency-red-light z-[-1]" />
           </section>
           <section class="basis-1/2 px-8">
             <div class="py-8 space-y-4">
