@@ -7,7 +7,7 @@
 {#snippet question(num, question, optA, qualA, optB, qualB)}
   <div class="flex space-x-4">
     <div>
-      <div class="flex justify-center items-center w-8 h-8 rounded-full bg-agency-red text-white text-[1.5rem] font-bold">{num}</div>
+      <div class="flex justify-center items-center w-8 h-8 rounded-full bg-agency-red text-white text-[1.5rem] font-bold font-poppins">{num}</div>
     </div>
     <div class="flex flex-col space-y-2">
       <p class="font-bold">{question}</p>
@@ -54,10 +54,10 @@
           <p class="w-60">Choose a go-to warmup excercise by rolling on the table below or creating your own.</p>
           <div class="flex w-60 border-2 border-agency-red rounded-[1rem] [&>*>h3]:p-2 [&>*>h3]:border-b [&>*>h3]:border-agency-red [&>*>h3:last-child]:border-b-0">
             <div class="basis-1/5 flex flex-col border-r border-agency-red [&>h3]:flex [&>h3]:justify-center [&>h3]:items-center">
-              <h3 class="bg-agency-red-light rounded-tl-[0.9rem]">1</h3>
-              <h3 class="">2</h3>
-              <h3 class=" bg-agency-red-light"><red>3</red></h3>
-              <h3 class="">4</h3>
+              <h3 class="bg-agency-red-light rounded-tl-[0.9rem] font-poppins">1</h3>
+              <h3 class="font-poppins">2</h3>
+              <h3 class="bg-agency-red-light font-poppins"><red>3</red></h3>
+              <h3 class="font-poppins">4</h3>
             </div>
             <div class="basis-4/5 flex flex-col">
               <h3 class="bg-agency-red-light rounded-tr-[0.9rem]">Pushups</h3>
