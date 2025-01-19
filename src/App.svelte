@@ -15,7 +15,7 @@
       <ul class="space-y-1">
         <li class="flex space-x-2">
           <p class="text-agency-red text-[0.5rem]">▶</p>
-          <p>{optA} (<strong>+<red>3</red> {qualA}</strong>)</p>
+          <p class="leading-[0.85rem]">{optA} (<strong>+<red>3</red> {qualA}</strong>)</p>
         </li>
         <li class="flex space-x-2">
           <p class="text-agency-red text-[0.5rem]">▶</p>
@@ -47,9 +47,6 @@
             <br>
             <br>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <br>
-            <br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
           <h3>Most Important Meal</h3>
           <p class="w-60">Choose a go-to warmup excercise by rolling on the table below or creating your own.</p>
@@ -74,18 +71,18 @@
     <div class="basis-1/2 flex">
       <div class="flex flex-col">
         <section class="basis-[20%] relative flex flex-col border-b-2 border-pale-blue-gray pl-20">
-          <div class="py-12 space-y-1.5">
+          <div class="pt-12 space-y-1.5">
             <h3 class="font-bold">Prime Directive</h3>
-            <h2>Don't let them get complacent.</h2>
-            <span>
+            <h2 class="pb-2">Don't let them get complacent.</h2>
+            <span class="text-deep-purple">
               <b>Each time you give a compliment,</b> receive <b>1 Demerit.</b>
             </span>
         </div>
-          <AuctionFillFinance transform="scale(-1, 1)" class="absolute top-[0.25rem] right-[4rem] w-32 h-32 text-agency-red-light z-[-1]" />
+          <AuctionFillFinance transform="scale(-1, 1)" class="absolute top-[1rem] right-[4rem] w-32 h-32 text-agency-red-light z-[-1]" />
         </section>
-        <div class="basis-[28%] flex border-b-2 border-pale-blue-gray">
+        <div class="basis-[30%] flex border-b-2 border-pale-blue-gray">
           <section class="basis-1/2 relative border-r-2 border-pale-blue-gray pl-20">
-            <div class="py-10 space-y-2">
+            <div class="py-8 space-y-2">
               <h3>Sanctioned Behaviors</h3>
               <p class="pb-1">Receive <b>1 Commendation</b> each time you:</p>
               <ul class="w-36 space-y-1 pb-2 [&>li]:flex [&>li]:space-x-2 z-10">
@@ -109,10 +106,10 @@
                 after superlatives have been awarded.
               </p>
             </div>
-            <MedalLineBusiness class="absolute top-[4.5rem] right-[3rem] w-32 h-32 text-agency-red-light z-[-1]" />
+            <MedalLineBusiness class="absolute top-[4.5rem] right-[2.5rem] w-32 h-32 text-agency-red-light z-[-1]" />
           </section>
           <section class="basis-1/2 px-8">
-            <div class="py-10 space-y-4">
+            <div class="py-8 space-y-4">
               <h3 class="font-bold">
                 Initial Requisition:<br>
                 Motivational Pamphlet
@@ -134,9 +131,9 @@
             </div>
           </section>
         </div>
-        <section class="flex flex-col">
+        <section class="basis-[50%] flex flex-col">
           <article class="basis-1/2">
-            <div class="flex py-10">
+            <div class="flex pt-8 pb-2">
               <div class="basis-1/2 pl-20 pr-10 space-y-5">
                 <h2>Self-Assessment</h2>
                 <p>
@@ -158,13 +155,13 @@
                   specific supervisors or coworkers.<br>
                 </p>
               </div>
-              <div class="basis-1/2 -mx-4 flex flex-col pr-4 space-y-8">
+              <div class="basis-1/2 -mx-4 flex flex-col pr-4 space-y-4">
                 {@render question(
                   1,
                   'When I see someone stumble, I…',
                   'Encourage them to watch their step by building pit traps throughout the office.',
                   'Persistence',
-                  'Commandeer their legs to ensure it won’t happen again.',
+                  'Help them get back up and running by chasing after them with an axe.',
                   'Dynamism',
                 )}
                 {@render question(
@@ -178,7 +175,7 @@
                 {@render question(
                   3,
                   'The one thing all successful people share in common is…',
-                  'A dedication to hard work and self improvement.',
+                  'A dedication to hard work and self improvement.\n\n',
                   'Duplicity',
                   'Success',
                   'Attentiveness',
@@ -186,8 +183,10 @@
               </div>
             </div>
           </article>
-          <article class="flex justify-center items-center h-16 ml-20 mr-8 border-2 border-agency-red rounded-[1rem] text-bold text-[1.25rem] font-urw">
-            "JUST. DO. IT."
+          <article class="flex items-center w-full h-full pl-20 pr-8">
+            <div class="flex justify-center items-center w-full h-16 border-2 border-agency-red rounded-[1rem] text-bold text-[1.25rem] font-urw">
+              "JUST. DO. IT."
+            </div>
           </article>
         </section>
       </div>
