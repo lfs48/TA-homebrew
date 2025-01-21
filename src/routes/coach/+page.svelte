@@ -43,7 +43,7 @@
     'Kegels',
   ];
 
-  const directive = `No complacency.`;
+  const directive = `Keep them sweating.`;
   const demeritTrigger = 'Each time you give a compliment';
 
   const sanctioned = [
@@ -131,6 +131,13 @@
     </div>
   </div>
 {/snippet}
+
+<style>
+  h1, h2 {
+    @apply
+      text-agency-red
+  }
+</style>
 
 <article class="flex w-full h-full tracking-[-0.012rem]">
   <div class="flex">
