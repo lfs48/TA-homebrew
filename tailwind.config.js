@@ -17,7 +17,11 @@ export default {
           DEFAULT: '#dd2a25'
         },
         'anomaly-blue': '#0047BB',
-        'reality-yellow': '#fcad30',
+        'reality-yellow': {
+          'lighter': '#feeacb',
+          'light': '#fdd597',
+          DEFAULT: '#fcad30',
+        },
         'deep-purple': '#251c46',
         'pale-gray': '#ebf0f8',
       },
