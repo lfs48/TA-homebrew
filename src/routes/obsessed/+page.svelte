@@ -1,6 +1,7 @@
 
 
 <script>
+    import art from '../../assets/images/obsessed.png'
     import { FireFillWeather, QuestionFillSystem, TriangleFillDesign } from 'svelte-remix';
   
     const title = 'Obsessed';
@@ -133,8 +134,8 @@
   </style>
   
   <article class="flex w-full h-full tracking-[-0.012rem]">
-    <div class="basis-[47.5%] pl-24 py-10">
-      <div class="pb-5">
+    <div class="basis-[47.5%] pt-10 border-l-2">
+      <div class="pl-16 pb-5">
         <h1 class="pb-2">{title}</h1>
         <div class="flex justify-between pr-20">
           <h2>{tagline}</h2>
@@ -144,7 +145,7 @@
           </h2>
         </div>
       </div>
-      <div class="flex space-x-2 pb-5">
+      <div class="flex space-x-2 pl-16 pb-5">
         <div class="basis-1/2 flex">
             <div class="w-72 space-y-1">
               {@html description1}
@@ -172,7 +173,7 @@
           </div>
         </div>
       </div>
-      <img src='' alt='' class="w-[40rem] h-[15rem]" />
+      <img src={art} alt='' class="w-[45rem] h-[22rem] pl-8" />
     </div>
     <div class="basis-[5%]"></div>
     <div class="basis-[47.5%] flex">
