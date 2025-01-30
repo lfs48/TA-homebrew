@@ -4,13 +4,13 @@
     import art from '../../assets/images/obsessed.png'
     import { FireFillWeather, QuestionFillSystem, TriangleFillDesign } from 'svelte-remix';
   
+    const version = '0.1.0'
     const title = 'Obsessed';
     const tagline = 'The sparkle in your eye.';
     const description1 = `
       <p>
         The Obsessed Agent's personal life revolves
-        around a singular overwhelming interest
-        in a specific thing: their Obsession.
+        around a singular overwhelming interest.
         It might be a piece of media, hobby,
         lifestyle, religion, or something more esoteric.
         The uniting factor is that this Obsession
@@ -44,7 +44,7 @@
       <p>
         Our researchers will continue to investigate
         how to guide these Agents toward 
-        value-adding interests.
+        more valuable interests.
         In the meantime, cost-benefit analysis shows
         that it remains worthwhile to employ
         them as long as they can be kept
@@ -101,6 +101,12 @@
   
     const relationships = [
       {
+        q: `Who has a connection you're jealous of?`,
+        examples: `
+          Dog Groomer, Ran Into Them at a Bakery Once, Actor's Distant Cousin
+        `,
+      },
+      {
         q: `Who is as deep in the rabbit hole as you are?`,
         examples: `
           Best Friend, Nail Tech, Tween on Internet Forum 
@@ -110,12 +116,6 @@
         q: `Who can't quite follow along with your rants?`,
         examples: `
           Chauffeur, Tattoo Artist, Jujitsu Sparring Partner
-        `,
-      },
-      {
-        q: `Who has a connection you're jealous of?`,
-        examples: `
-          Dog Groomer, Ran Into Them at a Bakery Once, Actor's Distant Cousin
         `,
       },
     ];
@@ -269,8 +269,8 @@
                   <div class="absolute -top-[0.3rem] left-[2rem] w-[0.2rem] h-[12.3rem] bg-reality-yellow"></div>
                   <div class="absolute -top-[0.3rem] left-[2rem] w-[1rem] h-[0.2rem] bg-reality-yellow"></div>
                   <div class="absolute -top-[0.5rem] left-[3.5rem] w-32">
-                    <p class="text-reality-yellow font-bold">{relationships[2].q}</p>
-                    <p>Examples: <i>{relationships[2].examples}</i></p>
+                    <p class="text-reality-yellow font-bold">{relationships[0].q}</p>
+                    <p>Examples: <i>{relationships[0].examples}</i></p>
                   </div>
                 </div>
                 <div>
@@ -290,8 +290,8 @@
                     <div class="absolute top-[7.2rem] left-[3.5rem] w-[0.2rem] h-[5.8rem] bg-reality-yellow"></div>
                     <div class="absolute top-[7.2rem] left-[3.5rem] w-[1.1rem] h-[0.2rem] bg-reality-yellow"></div>
                     <div class="absolute top-[7rem] left-[5rem] w-32">
-                      <p class="text-reality-yellow font-bold">{relationships[0].q}</p>
-                      <p>Examples: <i>{relationships[0].examples}</i></p>
+                      <p class="text-reality-yellow font-bold">{relationships[2].q}</p>
+                      <p>Examples: <i>{relationships[2].examples}</i></p>
                     </div>
                   </div>
                 </div>
@@ -300,8 +300,9 @@
           </article>
         </section>
       </div>
-      <aside class="flex bg-reality-yellow w-20 h-full text-vertical pt-10 px-2">
+      <aside class="flex justify-between bg-reality-yellow w-20 h-full text-vertical text-white pt-10 pb-2">
         <div class="flex items-center text-white font-bold font-urw text-[1.5rem]">Reality ▾ {title}</div>
+        <div class="flex justify-center text-horizontal font-poppins font-bold text-[1.1rem]">v{version}</div>
       </aside>
     </div>
 </article>
