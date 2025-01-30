@@ -24,6 +24,7 @@ export default {
         },
         'deep-purple': '#251c46',
         'pale-gray': '#ebf0f8',
+        'purple-gray': '#9995aa',
       },
     },
   },

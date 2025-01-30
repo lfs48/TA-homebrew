@@ -44,10 +44,10 @@
       <p>
         Our researchers will continue to investigate
         how to guide these Agents toward 
-        <red>Agency</red>-approved interests.
+        value-adding interests.
         In the meantime, cost-benefit analysis shows
         that it remains worthwhile to employ
-        them as long as<br> they can be kept
+        them as long as they can be kept
         adequately enriched.
       </p>
     `
@@ -253,13 +253,48 @@
                   the other two <red>3</red> <b>Connection.</b>
                 </p>
               </div>
-              <div class="basis-1/2 -mx-4 flex flex-col pr-4 space-y-4">
-                {#each relationships as relation}
-                  <div>
-                    <p class="text-reality-yellow font-bold">{relation.q}</p>
-                    <p>Examples: <i>{relation.examples}</i></p>
+              <div class="basis-1/2 relative -mx-4 flex flex-col pr-4 space-y-4 pt-20">
+                <!-- {#each relationships as relation}
+                  <div class="w-44">
+                    <p class="text-reality-yellow font-bold">{relationships[0].q}</p>
+                    <p>Examples: <i>{relationships[0].examples}</i></p>
                   </div>
-                {/each}
+                {/each} -->
+                <div class="flex justify-evenly items-end w-full h-full pt-6 border-l-4 border-b-4 border-purple-gray">
+                  {#each ['h-[6.5rem]', 'h-[5rem]', 'h-[2.5rem]', 'h-[4rem]', 'h-[7rem]', 'h-[12.5rem]', 'h-[11rem]', 'h-[6rem]'] as height}
+                    <div class={`"basis-[1/8] w-4 ${height} bg-reality-yellow`}></div>
+                  {/each}
+                </div>
+                <div>
+                  <div class="absolute -top-[0.3rem] left-[2rem] w-[0.2rem] h-[12.3rem] bg-reality-yellow"></div>
+                  <div class="absolute -top-[0.3rem] left-[2rem] w-[1rem] h-[0.2rem] bg-reality-yellow"></div>
+                  <div class="absolute -top-[0.5rem] left-[3.5rem] w-32">
+                    <p class="text-reality-yellow font-bold">{relationships[2].q}</p>
+                    <p>Examples: <i>{relationships[2].examples}</i></p>
+                  </div>
+                </div>
+                <div>
+                  <div class="absolute top-[5.7rem] left-[16.3rem] w-[0.2rem] h-[2rem] bg-reality-yellow"></div>
+                  <div class="absolute top-[5.7rem] left-[13rem] w-[3.5rem] h-[0.2rem] bg-reality-yellow"></div>
+                  <div class="absolute top-[0.2rem] left-[13rem] w-[0.2rem] h-[5.5rem] bg-reality-yellow"></div>
+                  <div class="absolute top-[0.2rem] left-[13rem] w-[1.1rem] h-[0.2rem] bg-reality-yellow"></div>
+                  <div class="absolute top-[0rem] left-[14.5rem] w-32">
+                    <p class="text-reality-yellow font-bold">{relationships[1].q}</p>
+                    <p>Examples: <i>{relationships[1].examples}</i></p>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <div class="absolute top-[13rem] left-[6.75rem] w-[0.2rem] h-[3rem] bg-reality-yellow"></div>
+                    <div class="absolute top-[13rem] left-[3.5rem] w-[3.25rem] h-[0.2rem] bg-reality-yellow"></div>
+                    <div class="absolute top-[7.2rem] left-[3.5rem] w-[0.2rem] h-[5.8rem] bg-reality-yellow"></div>
+                    <div class="absolute top-[7.2rem] left-[3.5rem] w-[1.1rem] h-[0.2rem] bg-reality-yellow"></div>
+                    <div class="absolute top-[7rem] left-[5rem] w-32">
+                      <p class="text-reality-yellow font-bold">{relationships[0].q}</p>
+                      <p>Examples: <i>{relationships[0].examples}</i></p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </article>
