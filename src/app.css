@@ -25,6 +25,9 @@
   .text-vertical {
     writing-mode: vertical-lr;
   }
+  .text-horizontal {
+    writing-mode: horizontal-tb;
+  }
 }
 
 h1 {

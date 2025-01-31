@@ -1,7 +1,7 @@
 
 
 <script>
-  import art from '../../assets/images/coach.png'
+  import art from '../../../assets/images/coach.png'
   import { AuctionFillFinance, MedalLineBusiness, TriangleFillDesign } from 'svelte-remix';
 
   const title = 'Coach';
@@ -153,20 +153,20 @@
           <p class="w-72">
             {@html description}
           </p>
-          <h3>{tableTtitle}</h3>
+          <h4>{tableTtitle}</h4>
           <p class="w-60">{@html tableDesc}</p>
-          <div class="flex w-60 border-2 border-agency-red rounded-[1rem] [&>*>h3]:p-2 [&>*>h3]:border-b [&>*>h3]:border-agency-red [&>*>h3:last-child]:border-b-0">
-            <div class="basis-1/5 flex flex-col border-r border-agency-red [&>h3]:flex [&>h3]:justify-center [&>h3]:items-center">
-              <h3 class="bg-agency-red-light rounded-tl-[0.9rem] font-poppins">1</h3>
-              <h3 class="font-poppins">2</h3>
-              <h3 class="bg-agency-red-light font-poppins"><red>3</red></h3>
-              <h3 class="font-poppins">4</h3>
+          <div class="flex w-60 border-2 border-agency-red rounded-[1rem] [&>*>h4]:p-2 [&>*>h4]:border-b [&>*>h4]:border-agency-red [&>*>h4:last-child]:border-b-0">
+            <div class="basis-1/5 flex flex-col border-r border-agency-red [&>h4]:flex [&>h4]:justify-center [&>h4]:items-center">
+              <h4 class="bg-agency-red-light rounded-tl-[0.9rem] font-poppins">1</h4>
+              <h4 class="font-poppins">2</h4>
+              <h4 class="bg-agency-red-light font-poppins"><red>3</red></h4>
+              <h4 class="font-poppins">4</h4>
             </div>
             <div class="basis-4/5 flex flex-col">
-              <h3 class="bg-agency-red-light rounded-tr-[0.9rem]">{tableOptions[0]}</h3>
-              <h3 class="">{tableOptions[1]}</h3>
-              <h3 class=" bg-agency-red-light">{tableOptions[2]}</h3>
-              <h3 class="">{tableOptions[3]}</h3>
+              <h4 class="bg-agency-red-light rounded-tr-[0.9rem]">{tableOptions[0]}</h4>
+              <h4 class="">{tableOptions[1]}</h4>
+              <h4 class=" bg-agency-red-light">{tableOptions[2]}</h4>
+              <h4 class="">{tableOptions[3]}</h4>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@
       <div class="flex flex-col">
         <section class="basis-[20%] relative flex flex-col border-b-2 border-pale-blue-gray pl-20">
           <div class="pt-12 space-y-1.5">
-            <h3 class="font-bold">Prime Directive</h3>
+            <h4 class="font-bold">Prime Directive</h4>
             <h2 class="pb-2">{directive}</h2>
             <span class="text-deep-purple">
               <b>{demeritTrigger},</b> receive <b>1 Demerit.</b>
@@ -188,7 +188,7 @@
         <div class="basis-[30%] flex border-b-2 border-pale-blue-gray">
           <section class="basis-1/2 relative border-r-2 border-pale-blue-gray pl-20">
             <div class="py-8 space-y-2">
-              <h3>Sanctioned Behaviors</h3>
+              <h4>Sanctioned Behaviors</h4>
               <p class="pb-1">Receive <b>1 Commendation</b> each time you:</p>
               <ul class="w-36 space-y-1 pb-2 [&>li]:flex [&>li]:space-x-2 z-10">
                 <li>
@@ -215,10 +215,10 @@
           </section>
           <section class="basis-1/2 px-8">
             <div class="py-8 space-y-4">
-              <h3 class="font-bold">
+              <h4 class="font-bold">
                 Initial Requisition:<br>
                 {requisitionName}
-              </h3>
+              </h4>
               <p>
                 {@html requisitionDesc}
               </p>

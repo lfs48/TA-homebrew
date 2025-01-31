@@ -1,7 +1,7 @@
 
 
 <script>
-    import art from '../../assets/images/obsessed.png'
+    import art from '../../../assets/images/obsessed.png'
     import { FireFillWeather, QuestionFillSystem, TriangleFillDesign } from 'svelte-remix';
   
     const version = '0.1.0'
@@ -68,7 +68,7 @@
       something related to your Obsession
       pop up around you (<i>an advertisement
       for new merch, someone sharing an
-      incorrect fact, etc.</i>). If you ignore it, your
+      incorrect fact, etc.</i>).<br> If you ignore it, your
       attention will will be consumed by it later:
       the relationship whose time you most value
       loses one Connection.
