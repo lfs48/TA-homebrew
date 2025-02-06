@@ -1,18 +1,23 @@
 <script>
     import { RouterView } from '@dvcol/svelte-simple-router/components';
 
-    import CoachPage from './routes/coach/+page.svelte';
-    import ObsessedPage from './routes/obsessed/+page.svelte'
+    import AscentPage from './routes/anomaly/ascent/+page.svelte';
+    import CoachPage from './routes/competency/coach/+page.svelte';
+    import ObsessedPage from './routes/reality/obsessed/+page.svelte'
 
     const routes = [
         {
-            path: '/coach',
+            path: '/anomaly/ascent',
+            component: AscentPage
+        },
+        {
+            path: '/competency/coach',
             component: CoachPage
         },
         {
-            path: '/obsessed',
+            path: '/reality/obsessed',
             component: ObsessedPage
-        }
+        },
     ];
 
     const options = {
