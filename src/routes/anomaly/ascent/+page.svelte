@@ -1,7 +1,8 @@
 
 
 <script>
-    import { FireFillWeather, QuestionFillSystem, TriangleFillDesign } from 'svelte-remix';
+    import art from '../../../assets/images/ascent.png'
+    import { OctagonFillDesign, TriangleFillDesign } from 'svelte-remix';
   
     const version = '0.1.0'
     const title = 'Ascent';
@@ -9,8 +10,8 @@
     const description1 = `
       <p>
         What's that in the sky?
-        Is it a bird riding on a still wind?
-        Is it a plane performing impossible stunts?
+        Is it a bird soaring to impossible heights?
+        Is it a plane performing physics-defying stunts?
         Is it a superhero flying to the rescue?
         Yes, it's Ascent!
       </p>
@@ -21,7 +22,7 @@
         they refuse to constrain themselves to a two-dimensional existence.
         Whenever a loose paper is blown away,
         a brick is hurled through a window,
-        or a bumblebee defies the laws of aviation,
+        or a rocketship blasts off into space,
         it is riding an updraft left in the wake of Ascent.
       </p>
       <p>
@@ -57,7 +58,7 @@
             allowing you to do one or more of the following:
           </p>
           <ul>
-            <li>Maneuver over or around a terrestrial obstacle.</li>
+            <li>Maneuver over an obstacle.</li>
             <li>Evade an attack from a grounded foe.</li>
             <li>Travel up to one mile in <three>3</three> seconds.</li>
           </ul>
@@ -79,7 +80,7 @@
         title: 'Aerodynamics',
         desc: `
           As you launch or throw an object into the air,
-          envision a trajectory for it and roll <b>Persistence</b>.
+          visualize a trajectory for it and roll <b>Persistence</b>.
         `,
         success: `
           <b>On a success,</b>  the object follows that trajectory,
@@ -140,34 +141,55 @@
   </style>
 
   {#snippet ability(title, desc, success, additional, failure, q, a1, a2)}
-  <div class="flex flex-col pl-20 py-4 pr-8">
-    <h3 class="pb-2">{title}</h3>
-    <p class="pb-4">{@html desc}</p>
-    <div class="flex space-x-4">
-      <div class="flex flex-col">
-        <p class="pb-4">{@html success}</p>
-        <p class="pb-4">{@html additional}</p>
-        <p>{@html failure}</p>
-      </div>
-      <div class="min-w-[15rem] h-min self-end p-4 space-y-1 rounded bg-anomaly-blue-lighter [&>p>b]:text-[1rem] [&>p>b]:mr-2">
-        <p class="text-anomaly-blue"><b>Q: </b>{@html q}</p>
-        <p class="text-anomaly-blue"><b>A: </b>{@html a1}</p>
-        <div class="flex items-center pl-6 space-x-1 text-anomaly-blue">
-          <div>🡆</div>
-          <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
-          <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
-          <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
-        </div>          
-        <p class="text-anomaly-blue"><b>A: </b>{@html a2}</p>
-        <div class="flex items-center pl-6 space-x-1 text-anomaly-blue">
-          <div>🡆</div>
-          <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
-          <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
-          <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+    <div class="flex flex-col pl-20 py-4 pr-8">
+      <h3 class="pb-2">{title}</h3>
+      <p class="pb-4">{@html desc}</p>
+      <div class="flex space-x-4">
+        <div class="flex flex-col">
+          <div class="flex space-x-2 pb-4">
+            <div class="relative">
+              <TriangleFillDesign class="w-[1.8rem] h-[1.8rem] text-anomaly-blue"/>
+              <p class="absolute top-[0.45rem] left-[0.45rem] text-[1.3rem] text-white">✔</p>
+              <div>
+
+              </div>
+            </div>
+            <p>{@html success}</p>
+          </div>
+          <div class="flex space-x-2 pb-4">
+            <div class="relative">
+              <TriangleFillDesign class="w-[1.8rem] h-[1.8rem] text-anomaly-blue"/>
+              <p class="absolute top-[0.5rem] left-[0.45rem] text-[1.1rem] text-white">★</p>
+            </div>
+            <p>{@html additional}</p>
+          </div>
+          <div class="flex space-x-2">
+            <div class="relative">
+              <OctagonFillDesign class="w-[1.8rem] h-[1.8rem] text-agency-red"/>
+              <p class="absolute top-[0.45rem] left-[0.5rem] text-[1rem] text-white">✖</p>
+            </div>
+            <p>{@html failure}</p>
+          </div>
+        </div>
+        <div class="min-w-[15rem] h-min self-end p-4 space-y-1 rounded bg-anomaly-blue-lighter [&>p>b]:text-[1rem] [&>p>b]:mr-2">
+          <p class="text-anomaly-blue"><b>Q: </b>{@html q}</p>
+          <p class="text-anomaly-blue"><b>A: </b>{@html a1}</p>
+          <div class="flex items-center pl-6 space-x-1 text-anomaly-blue">
+            <div>🡆</div>
+            <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+            <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+            <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+          </div>          
+          <p class="text-anomaly-blue"><b>A: </b>{@html a2}</p>
+          <div class="flex items-center pl-6 space-x-1 text-anomaly-blue">
+            <div>🡆</div>
+            <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+            <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+            <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   {/snippet}
   
   <article class="flex w-full h-full tracking-[-0.012rem]">
@@ -196,12 +218,66 @@
           </div>
         </div>
       </div>
-      <img src='' alt='' class="" />
+      <img src={art} alt='' class="fixed size-[30rem] top-[10rem] left-[20rem]" />
     </div>
     <div class="basis-[5%]"></div>
     <div class="basis-[47.5%] flex">
         <div class="flex flex-col justify-center w-full divide-y-2 divide-y-pale-blue-gray">
-          {#each abilities as {title, desc, success, additional, failure, q, a1, a2}}
+          <div class="flex flex-col pl-20 py-4 pr-8">
+            <h3 class="pb-2">{abilities[0].title}</h3>
+            <p class="pb-4">{@html abilities[0].desc}</p>
+            <div class="flex space-x-4">
+              <div class="flex flex-col">
+                <div class="flex space-x-2 pb-4">
+                  <div class="relative">
+                    <TriangleFillDesign class="w-[1.8rem] h-[1.8rem] text-anomaly-blue"/>
+                    <p class="absolute top-[0.45rem] left-[0.45rem] text-[1.3rem] text-white">✔</p>
+                    <div class="flex flex-col items-center">
+                      <div class="w-1 h-[0.85rem] rounded-tr-full rounded-tl-full bg-anomaly-blue"></div>
+                      <div class="size-[0.8rem] rounded-full border-[0.2rem] border-anomaly-blue"></div>
+                      <div class="w-1 h-[0.45rem] bg-anomaly-blue"></div>
+                      <div class="size-[0.8rem] rounded-full border-[0.2rem] border-anomaly-blue"></div>
+                      <div class="w-1 h-[0.45rem] bg-anomaly-blue"></div>
+                      <div class="size-[0.8rem] rounded-full border-[0.2rem] border-anomaly-blue"></div>
+                    </div>
+                  </div>
+                  <p class="space-y-2 [&>ul]:space-y-1">{@html abilities[0].success}</p>
+                </div>
+                <div class="flex space-x-2 pb-4">
+                  <div class="relative">
+                    <TriangleFillDesign class="w-[1.8rem] h-[1.8rem] text-anomaly-blue"/>
+                    <p class="absolute top-[0.5rem] left-[0.45rem] text-[1.1rem] text-white">★</p>
+                  </div>
+                  <p>{@html abilities[0].additional}</p>
+                </div>
+                <div class="flex space-x-2">
+                  <div class="relative">
+                    <OctagonFillDesign class="w-[1.8rem] h-[1.8rem] text-agency-red"/>
+                    <p class="absolute top-[0.45rem] left-[0.5rem] text-[1rem] text-white">✖</p>
+                  </div>
+                  <p>{@html abilities[0].failure}</p>
+                </div>
+              </div>
+              <div class="min-w-[15rem] h-min self-end p-4 space-y-1 rounded bg-anomaly-blue-lighter [&>p>b]:text-[1rem] [&>p>b]:mr-2">
+                <p class="text-anomaly-blue"><b>Q: </b>{@html abilities[0].q}</p>
+                <p class="text-anomaly-blue"><b>A: </b>{@html abilities[0].a1}</p>
+                <div class="flex items-center pl-6 space-x-1 text-anomaly-blue">
+                  <div>🡆</div>
+                  <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+                  <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+                  <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+                </div>          
+                <p class="text-anomaly-blue"><b>A: </b>{@html abilities[0].a2}</p>
+                <div class="flex items-center pl-6 space-x-1 text-anomaly-blue">
+                  <div>🡆</div>
+                  <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+                  <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+                  <div class="w-4 h-4 rounded bg-white border border-anomaly-blue-light"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {#each abilities.slice(1,3) as {title, desc, success, additional, failure, q, a1, a2}}
             {@render ability(title, desc, success, additional, failure, q, a1, a2)}
           {/each}
         </div>

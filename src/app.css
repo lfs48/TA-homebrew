@@ -73,7 +73,17 @@ p, ul {
     text-deep-purple
 }
 
+blue {
+  @apply
+    text-anomaly-blue
+}
+
 red {
+  @apply
+    text-agency-red
+}
+
+three {
   @apply
     font-bold
     text-agency-red
