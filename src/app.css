@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 @font-face {
     font-family: 'URW Gothic L';
     src: url('./assets/fonts/URW_Gothic_L.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+  font-family: 'Terminus';
+  src: url('./assets/fonts/TerminusTTF-4.49.3.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @tailwind base;
@@ -22,6 +30,9 @@
   .font-urw {
     font-family: 'URW Gothic L';
   }
+  .font-terminal {
+    font-family: 'Terminus', monospace;
+  }
   .text-vertical {
     writing-mode: vertical-lr;
   }
@@ -29,6 +40,9 @@
     writing-mode: horizontal-tb;
   }
 }
+
+
+
 
 h1 {
   @apply
