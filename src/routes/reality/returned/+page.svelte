@@ -11,23 +11,19 @@
       <p>
         Coming back from the dead is just part of the job
         for most Agents, but the Returned is an unusual case.
-        They met their demise before they became an Agency employee.
-        Yet somehow, they came back without our assistance.
+        They met their demise before they became an Agency employee,
+        but somehow failed to cross the final threshold.
+        Perhaps they have an obligation to the living world
+        that couldn't be abandoned, or perhaps
+        they were brought back against their will.
+        Their body still bears
 
       </p>
       <p>
          
       </p>
       <p>
-        Unfortunately, data shows that these Agents
-        have little control over which interests 
-        they gravitate toward, and they are
-        statistically much more likely to become
-        fixated on useless trivialities that generate
-        no revenue. Worse yet, these frivolous
-        topics often occupy their focus during
-        missions, leading to overlooked details
-        and critical blunders.
+        
       </p>
     `;
 
@@ -45,12 +41,15 @@
   
     const tableTtitle = 'Reanimation Method';
     const tableDesc = `
-      Decide how you were brought back by rolling on the table below or creating your own.`;
+      Your body still bears the marks of your first death, which your 
+      Life Insurance Policy cannot repair. Choose a scar from the table below
+      or create your own.
+      `;
     const tableOptions = [
-      'Reincarnation',
-      'Mad science',
-      `Necromancy`,
-      'Promise',
+      'Decapitated',
+      'Hole Through Chest',
+      `Rotting Skin`,
+      '',
     ];
   
     const triggerTtitle = 'Came Back Wrong';
@@ -67,11 +66,11 @@
       `;
     const trackTitle = 'Rest in Peace';
     const trackDesc = `
-      When you say goodbye to something for the last time, 
+      When you let go of something from when you were alive, 
       mark the next empty empty box on a four-box
       "Rest in Peace" track. When this happens while
-      all boxes are marked, or when you, you finally
-      accept the end of your previous life.
+      all boxes are marked, or when you make peace with your death
+      on your own terms, you finally accept the end of your previous life.
       If you still wish to continue your new one,
       you must choose a new Reality.
     `;
@@ -85,7 +84,7 @@
 
     const onboarding = [
       'What is the most painful thing you have ever experienced?',
-      'How do you spend a typical Saturday night?',
+      '',
       `What are you too embarassed to admit?`,
     ]
   
@@ -93,19 +92,19 @@
       {
         q: `Who watched you die?`,
         examples: `
-          Executioner, Murder Witness,
+            Estranged Lover, Brain Surgeon, The Murderer
         `,
       },
       {
         q: `Who helped bring you back?`,
         examples: `
-           
+           Mad Scientist, 
         `,
       },
       {
         q: `Who likes you better this way?`,
         examples: `
-          Mortician, Friendly Zombie
+          Mortician, Comic Book Geek, Candle Salesman
         `,
       },
     ];

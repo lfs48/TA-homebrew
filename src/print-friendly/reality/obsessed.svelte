@@ -4,7 +4,7 @@
     import art from '../../../assets/images/obsessed.png'
     import { FireFillWeather, QuestionFillSystem, TriangleFillDesign } from 'svelte-remix';
   
-    const version = '0.1.0'
+    const version = '0.1.1'
     const title = 'Obsessed';
     const tagline = 'The sparkle in your eye.';
     const description1 = `
@@ -78,11 +78,10 @@
       When you enthusiastically engross
       yourself in something that doesn't relate
       to your Obsession, mark the next empty
-      mark the next empty box on a four-box
-      "Moved On" track. When this happens while
-      all boxes are marked, or when your Obsession
-      abruptly ceases through other means,
-      you must choose a new Reality.
+      box on a four-box "Moved On" track. 
+      When this happens while all boxes are marked, 
+      or when your Obsession abruptly ceases through
+      other means, you must choose a new Reality.
     `;
   
     const releaseTitle = 'Hyperfocused';
