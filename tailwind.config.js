@@ -16,7 +16,11 @@ export default {
           'light': '#f6c9c8',
           DEFAULT: '#dd2a25'
         },
-        'anomaly-blue': '#0047BB',
+        'anomaly-blue': {
+          'lighter': '#f3f6fa',
+          'light': '#ced8ec',
+          DEFAULT: '#3381ff',
+        },
         'reality-yellow': {
           'lighter': '#feeacb',
           'light': '#fdd597',
