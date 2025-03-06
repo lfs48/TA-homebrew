@@ -94,11 +94,12 @@ blue {
 
 red {
   @apply
+    font-bold
     text-agency-red
 }
 
-three {
+yellow {
   @apply
     font-bold
-    text-agency-red
+    text-reality-yellow
 }
