@@ -85,7 +85,7 @@ p, ul {
     text-[.8rem]
     leading-[1rem]
     text-deep-purple
-}
+}*/
 
 blue {
   @apply
@@ -101,4 +101,4 @@ three {
   @apply
     font-bold
     text-agency-red
-} */
+}
