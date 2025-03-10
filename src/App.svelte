@@ -11,6 +11,9 @@
 
     import ObsessedPage from './routes/reality/obsessed.svelte';
 
+    import ChangelogPage from './routes/changelog/+page.svelte';
+    import CreditsPage from './routes/credits/+page.svelte';
+
     let openFolder = 'home';
 
     function setOpenFolder(folder) {
@@ -42,6 +45,14 @@
             path: '/reality/obsessed',
             component: ObsessedPage
         },
+        {
+            path: '/changelog',
+            component: ChangelogPage,
+        },
+        {
+            path: '/credits',
+            component: CreditsPage,
+        },
     ];
 
     const options = {
@@ -50,7 +61,7 @@
     };
 </script>
 
-{#snippet sidebarItem(folder, links, textColor, borderColor)}
+{#snippet sidebarMenu(folder, links, textColor, borderColor)}
     <div class={`flex flex-col ${textColor}`}>
         <div class="flex items-center space-x-1">
             {#if openFolder === folder || window.location.pathname.includes(folder)}
@@ -73,24 +84,34 @@
     </div>
 {/snippet}
 
+{#snippet sidebarItem(name)}
+<div class="flex items-center space-x-1">
+    <ArrowRightSLineArrows class="size-[1rem]"/>
+        <a class={`pb-0.5 ${window.location.pathname.includes(name) && `border-b`}`} href={`/${name}`}>{name}</a>
+    </div>
+{/snippet}
+
 <div class="w-full h-full">
-    <div class="flex w-full h-full pl-[10rem] bg-zinc-800 font-terminal text-zinc-200">
+    <div class="flex w-full h-full pl-[8rem] bg-zinc-800 font-terminal text-zinc-200">
         <aside class={`
             fixed top-0 left-0
-            flex flex-col w-[8rem] h-full pl-2 py-8 space-y-3
+            flex flex-col justify-between w-[8rem] h-full pl-2 py-8
             border-r-2 border-r-zinc-200 border-opacity-20
             text-[1rem] leading-none
         `}>
-            <div class="flex items-center space-x-1">
-                <ArrowRightSLineArrows class="size-[1rem]"/>
-                <a class={`pb-0.5 ${window.location.pathname === '/' && `border-b`}`} href="/">home</a>
+            <div class="flex flex-col space-y-3">
+                <div class="flex items-center space-x-1">
+                    <ArrowRightSLineArrows class="size-[1rem]"/>
+                    <a class={`pb-0.5 ${window.location.pathname === '/' && `border-b`}`} href="/">home</a>
+                </div>
+                {@render sidebarMenu('anomaly', ['ascent'], 'text-anomaly-blue', 'border-anomaly-blue')}
+                {@render sidebarMenu('reality', ['obsessed'], 'text-reality-yellow', 'border-reality-yellow')}
+                {@render sidebarMenu('competency', ['coach'], 'text-agency-red', 'border-agency-red')}
+                {@render sidebarItem('playwall')}
             </div>
-            {@render sidebarItem('anomaly', ['ascent'], 'text-anomaly-blue', 'border-anomaly-blue')}
-            {@render sidebarItem('reality', ['obsessed'], 'text-reality-yellow', 'border-reality-yellow')}
-            {@render sidebarItem('competency', ['coach'], 'text-agency-red', 'border-agency-red')}
-            <div class="flex items-center space-x-1">
-                <ArrowRightSLineArrows class="size-[1rem]"/>
-                <a class={`pb-0.5 ${window.location.pathname.includes('/playwall') && `border-b`}`} href="/playwall">playwall</a>
+            <div class="space-y-3">
+                {@render sidebarItem('changelog')}
+                {@render sidebarItem('credits')}
             </div>
         </aside>
         <main class="w-full">
