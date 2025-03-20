@@ -1,1 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import 'tailwindcss';
+
+@font-face {
+  font-family: 'Terminus';
+  src: url('/fonts/TerminusTTF-4.49.3.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+    --color-anomaly-blue: #3381ff;
+    --color-reality-yellow: #fcad30;
+    --color-agency-red: #dd2a25;
+}
+
+@layer utilities {
+  .font-urw {
+    font-family: 'URW Gothic L';
+  }
+  .font-terminal {
+    font-family: 'Terminus', monospace;
+  }
+  .text-vertical {
+    writing-mode: vertical-lr;
+  }
+  .text-horizontal {
+    writing-mode: horizontal-tb;
+  }
+}
+
+blue {
+    @apply
+      font-bold
+      text-anomaly-blue
+  }
+  
+  red {
+    @apply
+      font-bold
+      text-agency-red
+  }
+  
+  yellow {
+    @apply
+      font-bold
+      text-reality-yellow
+  }
