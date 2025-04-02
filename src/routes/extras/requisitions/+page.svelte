@@ -4,27 +4,19 @@
 
 <style>
     @reference "../../../app.css";
-    h1, h2 {
+    h1, h2, h3 {
         @apply
-        font-bold
         text-agency-red
-        leading-none
     ;}
     h2 {
         @apply
-        w-full 
-        border-b 
         mb-1 
+        pb-1
         border-agency-red
-        text-[2rem]
-    ;}
-    p {
-        @apply
-        leading-[1.25rem]
     ;}
     li {
         @apply
-        leading-none
+        marker:text-agency-red
     ;}
 </style>
 
@@ -68,7 +60,7 @@
                     "You will successfully capture this <blue>Anomaly</blue>.",
                     "Everything will be okay.",
                 ] as phrase}
-                    {@render listItem(phrase)}
+                    <li>{@html phrase}</li>
                 {/each}
             </div>
             <div class="flex justify-between">

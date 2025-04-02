@@ -107,40 +107,40 @@
   </script>
 
 <style>
-    @reference "app.css";
-    h1, h2 {
+    @reference "../../../app.css";
+    h1, h2, h3 {
         @apply
-        font-bold
         text-agency-red
-        leading-none
     ;}
-    p {
+    h2 {
         @apply
-        leading-[1.25rem]
+        border-agency-red
+        pb-1
+        mb-1
     ;}
 </style>
 
 <div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
     <div>
         <div class="flex justify-between items-end">
-            <h1 class="text-[3rem]">{title}</h1>
-            <h2 class="relative leading-none pr-24">
+            <h1>{title}</h1>
+            <h3 class="relative pr-24">
                 <span class="absolute -left-[0.25rem] top-[0.35rem] text-white text-[1.5rem] pl-[0.75rem]">C<red class="ml-[0.11rem]">OMPETENCY</red></span>
                 <Triangle/>
-              </h2>
+            </h3>
         </div>
-        <h3 class="pb-8 text-agency-red text-[1.25rem]">{tagline}</h3>
+        <h3 class="pb-8">{tagline}</h3>
         <p class="space-y-2">{@html description}</p>
     </div>
     <div>
-        <h2 class="w-full border-b pb-1 mb-1 border-agency-red text-[2rem]">Prime Directive</h2>
+        <h2>Prime Directive</h2>
         <p>
             <red>{directive}</red>
             {demeritTrigger}, <red>receive 1 Demerit.</red>
         </p>
     </div>
     <div>
-        <h2 class="w-full border-b pb-1 mb-1 border-agency-red text-[2rem]">Sanctioned Behaviors</h2>
+        <h2>Sanctioned Behaviors</h2>
         <p class="pb-1">
             Receive <red>1 Commendation</red> each time you:
         </p>
@@ -160,14 +160,14 @@
           </p>
     </div>
     <div>
-        <h2 class="w-full border-b pb-1 mb-1 border-agency-red text-[2rem]">Initial Requisition</h2>
+        <h2>Initial Requisition</h2>
         <p>
             <red>{requisitionName}.</red>
             {@html requisitionDesc}
         </p>
     </div>
     <div>
-        <h2 class="w-full border-b pb-1 mb-1 border-agency-red text-[2rem]">Self-Assessment</h2>
+        <h2>Self-Assessment</h2>
         <div class="space-y-2">
             <p>
                 Please answer the following questions

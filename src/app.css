@@ -29,20 +29,57 @@
   }
 }
 
+h1, h2, h3 {
+  @apply
+  font-bold
+  leading-none
+}
+
+h1 {
+  @apply
+  text-[3rem]
+}
+
+h2 {
+  @apply
+  w-full
+  border-b
+  pb-1
+  mb-1
+  text-[2rem]
+}
+
+h3 {
+  @apply
+  text-[1.25rem]
+}
+
+p, div {
+  @apply
+  leading-[1.25rem]
+}
+
+li {
+  @apply
+  pl-2
+  marker:content-["›"]
+  leading-none
+;}
+
 blue {
     @apply
-      font-bold
-      text-anomaly-blue
+    font-bold
+    text-anomaly-blue
   }
   
   red {
     @apply
-      font-bold
-      text-agency-red
+    font-bold
+    text-agency-red
   }
   
   yellow {
     @apply
-      font-bold
-      text-reality-yellow
+    font-bold
+    text-reality-yellow
   }

@@ -16,22 +16,8 @@
     @reference "../app.css";
     h2 {
         @apply
-        font-bold
         text-anomaly-blue
-        leading-none
-    ;}
-    h2 {
-        @apply
-        w-full
-        border-b
-        pb-1
-        mb-1
         border-anomaly-blue
-        text-[2rem]
-    ;}
-    p, div {
-        @apply
-        leading-[1.25rem]
     ;}
     div :global(ul) {
         @apply

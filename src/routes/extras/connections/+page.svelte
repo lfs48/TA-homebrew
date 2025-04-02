@@ -1,33 +1,25 @@
 <style>
     @reference "../../../app.css";
-    h1, h2 {
+    h1, h2, h3 {
         @apply
-        font-bold
         text-reality-yellow
-        leading-none
     ;}
     h2 {
         @apply
-        w-full 
-        border-b 
         pb-1 
         mb-1 
         border-reality-yellow
-        text-[2rem]
-    ;}
-    p {
-        @apply
-        leading-[1.25rem]
     ;}
     li {
         @apply
-        leading-none
+        @apply
+        marker:text-reality-yellow
     ;}
 </style>
 
 <div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
     <div class="space-y-2">
-        <h1 class="text-[3rem]">Connection Bonuses</h1>
+        <h1>Connection Bonuses</h1>
         <p>
             At your GM's discretion, the following <yellow>Connection Bonuses</yellow>
             may be made available to assign to Relationships at your branch.

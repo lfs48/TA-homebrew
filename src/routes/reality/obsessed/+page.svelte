@@ -118,35 +118,26 @@
     @reference "../../../app.css";
     h1, h2, h3 {
         @apply
-        font-bold
         text-reality-yellow
-        leading-none
     ;}
     h2 {
         @apply
-        w-full
-        border-b
         pb-1
         mb-1
         border-reality-yellow
-        text-[2rem]
-    ;}
-    p {
-        @apply
-        leading-[1.25rem]
     ;}
 </style>
 
 <div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
     <div>
         <div class="flex justify-between items-end">
-            <h1 class="text-[3rem] pb-1">{title}</h1>
-            <h3 class="relative leading-none pr-24">
+            <h1 class="pb-1">{title}</h1>
+            <h3 class="relative pr-24">
                 <span class="absolute -left-[0.25rem] top-[0.35rem] text-white text-[1.5rem] pl-[0.75rem]">R<yellow class="ml-[0.11rem]">EALITY</yellow></span>
                 <Triangle fillColor="#fcad30"/>
-              </h3>
+            </h3>
         </div>
-        <h3 class="pb-8 text-[1.25rem]">{tagline}</h3>
+        <h3 class="pb-8">{tagline}</h3>
         <p class="space-y-2">{@html description}</p>
     </div>
     <div>
