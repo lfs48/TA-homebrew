@@ -1,7 +1,15 @@
 <script module>
-    import { ArrowRightSLineArrows, CheckFillSystem, CloseFillSystem, StarLineSystem } from 'svelte-remix';
+    import { ArrowRightSLineArrows, CheckFillSystem, CloseFillSystem, StarLineSystem, TriangleLineDesign } from 'svelte-remix';
 
     export { abilityBlock };
+
+    const snips = {
+        desc: descSnip,
+        success: successSnip,
+        additional: additionalSnip,
+        tri: triSnip,
+        failure: failureSnip,
+    };
 </script>
 
 <style>
@@ -25,64 +33,88 @@
         @apply
         leading-[1.25rem]
     ;}
+    div :global(ul) {
+        @apply
+        list-disc
+    ;}
     div :global(li) {
         @apply
         leading-none
         mb-2
         last:mb-0
-        before:content-["›"]
-        before:mr-2
-        before:text-anomaly-blue
+        marker:text-anomaly-blue
     ;}
 </style>
 
-{#snippet abilityBlock(parts)}
+{#snippet descSnip(text)}
+    <div class="space-y-2"v>
+        {@html text}
+    </div>
+{/snippet}
+
+{#snippet successSnip(text)}
+    <div class="flex items-start space-x-2">
+        <div class="pt-[0.2rem]">
+            <CheckFillSystem class="text-anomaly-blue size-[1rem]"/>
+        </div>
+        <div class="space-y-2">{@html text}</div>
+    </div>
+{/snippet}
+
+{#snippet additionalSnip(text)}
+    <div class="flex space-x-2">
+        <div class="pt-[0.25rem]">
+            <StarLineSystem class="text-anomaly-blue size-[0.75rem]"/>
+        </div>
+        <div class="space-y-2">{@html text}</div>
+    </div>
+{/snippet}
+
+{#snippet triSnip(text)}
+    <div class="flex space-x-2">
+        <div class="pt-[0.25rem]">
+            <TriangleLineDesign class="text-agency-red size-[0.75rem]"/>
+        </div>
+        <div class="space-y-2">{@html text}</div>
+    </div>
+{/snippet}
+
+{#snippet failureSnip(text)}
+    <div class="flex space-x-2 pb-2">
+        <div class="pt-[0.2rem]">
+            <CloseFillSystem class="text-agency-red size-[1rem]"/>
+        </div>
+        <div class="space-y-2">{@html text}</div>
+    </div>
+{/snippet}
+
+{#snippet abilityBlock({title, desc, success, additional, tri, failure, extra, question, answers})}
     <div class="space-y-3">
-        <h2>{parts.title}</h2>
-        <div>{@html parts.desc}</div>
-        {#if parts.success}
-            <div class="flex items-start space-x-2">
-                <div class="pt-[0.2rem]">
-                    <CheckFillSystem class="text-anomaly-blue size-[1rem]"/>
-                </div>
-                <div class="space-y-2">{@html parts.success}</div>
-            </div>
+        <h2>{title}</h2>
+        {@render descSnip(desc)}
+        {#if success}
+            {@render successSnip(success)}
         {/if}
-        {#if parts.additional}
-            <div class="flex space-x-2">
-                <div class="pt-[0.25rem]">
-                    <StarLineSystem class="text-anomaly-blue size-[0.75rem]"/>
-                </div>
-                <div class="space-y-2">{@html parts.additional}</div>
-            </div>
+        {#if additional}
+            {@render additionalSnip(additional)}
         {/if}
-        {#if parts.trisc}
-            <div class="flex space-x-2">
-                <div class="pt-[0.25rem]">
-                    <StarLineSystem class="text-anomaly-blue size-[0.75rem]"/>
-                </div>
-                <div class="space-y-2">{@html parts.trisc}</div>
-            </div>
+        {#if tri}
+            {@render triSnip(tri)}
         {/if}
-        {#if parts.failure}
-            <div class="flex space-x-2 pb-2">
-                <div class="pt-[0.2rem]">
-                    <CloseFillSystem class="text-agency-red size-[1rem]"/>
-                </div>
-                <div class="space-y-2">{@html parts.failure}</div>
-            </div>
+        {#if failure}
+            {@render failureSnip(failure)}
         {/if}
-        {#if parts.extra}
-            <div>
-                {@html parts.extra}
-            </div>
+        {#if extra}
+            {#each extra as {type, text}}
+                {@render snips[type](text)}
+            {/each}
         {/if}
-        {#if parts.question}
-            <div class="space-y-1">
-                <p><blue class="pr-1">Q: </blue>{parts.question}</p>
+        {#if question}
+            <div class="pt-2 space-y-1">
+                <p><blue class="pr-1">Q: </blue>{@html question}</p>
                 <div class="space-y-0.5">
-                    {#each parts.answers as {answer, boxes=3, code}}
-                        <p><blue>A:</blue> {answer}</p>
+                    {#each answers as {answer, boxes=3, code}}
+                        <p><blue>A:</blue> {@html answer}</p>
                         <div class="flex items-center pl-4 space-x-1 pb-0.5">
                             <ArrowRightSLineArrows class="size-[1rem] text-anomaly-blue"/>
                             {#each [...Array(boxes).keys()]}
