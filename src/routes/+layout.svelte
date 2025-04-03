@@ -7,14 +7,15 @@
 
 	let { children } = $props();
 
-    let openFolder = $state('home');
+    let openFolders = $state({
+        anomaly: false,
+        reality: false,
+        competency: false,
+        extras: false,
+    });
 
     function setOpenFolder(folder) {
-        if (folder === openFolder) {
-            openFolder = '';
-        } else {
-            openFolder = folder;
-        }
+        openFolders[folder] = !openFolders[folder];
     }
 
     const anomalyLinks = [
@@ -54,15 +55,18 @@
 
 {#snippet sidebarMenu(folder, links, textColor, borderColor)}
     <div class={`flex flex-col ${textColor}`}>
-        <div class="flex items-center space-x-1">
-            {#if openFolder === folder || isPath(folder)}
+        <button 
+            class="flex items-center space-x-1 cursor-pointer"
+            onclick={!isPath(folder) ? ()=>setOpenFolder(folder) : ()=>{}}
+        >
+            {#if openFolders[folder]}
                 <ArrowDownSLineArrows class="size-[1rem]"/>
             {:else}
                 <ArrowRightSLineArrows class="size-[1rem]"/>
             {/if}
-            <button onclick={!isPath(folder) ? ()=>setOpenFolder(folder) : ()=>{}} class={`pb-0.5`}>{folder}</button>
-        </div>
-        {#if openFolder === folder || isPath(folder)}
+            <div class={`pb-0.5`}>{folder}</div>
+    </button>
+        {#if openFolders[folder]}
             <div class="relative pl-[1.7rem] space-y-1.5">
                 <div class={`absolute top-0 left-[0.4rem] h-full border-l ${borderColor}`}></div>
                 {#each links as {link, color}}
@@ -72,14 +76,14 @@
                 {/each}
             </div>
         {/if}
-    </div>
+        </div>
 {/snippet}
 
 {#snippet sidebarItem(name)}
-<div class="flex items-center space-x-1">
-    <ArrowRightSLineArrows class="size-[1rem]"/>
-        <a class={`pb-0.5 ${isPath(name) && `border-b`}`} href={`/${name}`}>{name}</a>
-    </div>
+    <a class="flex items-center space-x-1" href={`/${name}`}>
+        <ArrowRightSLineArrows class="size-[1rem]"/>
+        <div class={`pb-0.5 ${isPath(name) && `border-b`}`}>{name}</div>
+    </a>
 {/snippet}
 
 <div class="w-full h-full">
@@ -102,7 +106,6 @@
                 {@render sidebarItem('playwall')}
             </div>
             <div class="space-y-3">
-                {@render sidebarItem('changelog')}
                 {@render sidebarItem('credits')}
             </div>
         </aside>
