@@ -70,7 +70,7 @@
             <div class="relative pl-[1.7rem] space-y-1.5">
                 <div class={`absolute top-0 left-[0.4rem] h-full border-l ${borderColor}`}></div>
                 {#each links as {link, color}}
-                    <div class={`w-min pb-0.5 ${color} ${isPath(link) && `border-b ${!color && borderColor}`}`}>
+                    <div class={`w-min pb-0.5 ${color} border-b ${isPath(link) ? (!color && borderColor) : 'border-zinc-800'}`}>
                         <a href={`/${folder}/${link}`}>{link}</a>
                     </div>
                 {/each}
@@ -95,9 +95,9 @@
             text-[1rem] leading-none
         `}>
             <div class="flex flex-col space-y-3">
-                <div class="flex items-center space-x-1">
+                <div class="flex items-center space-x-1 text-pentachoron">
                     <ArrowRightSLineArrows class="size-[1rem]"/>
-                    <a class={`pb-0.5 ${$page.path === '/' && `border-b`}`} href="/">home</a>
+                    <a class={`pb-0.5 ${$page.url.pathname === '/' && `border-b`}`} href="/">home</a>
                 </div>
                 {@render sidebarMenu('anomaly', anomalyLinks, 'text-anomaly-blue', 'border-anomaly-blue')}
                 {@render sidebarMenu('reality', realityLinks, 'text-reality-yellow', 'border-reality-yellow')}
