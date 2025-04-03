@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
+    <p>Congratulations, Agent!</p>
+    <div>
+        Your branch has been selected to participate
+        in the internal alpha test for <red>Project Pentachoron</red>.
+        This exciting new <red>Agency</red> initiative seeks to
+        modernize and streamline the distribution of <red>Agent</red>-facing materials
+        through a sleek digital interface.
+    </div>
+</div>

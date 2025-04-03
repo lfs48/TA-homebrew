@@ -12,7 +12,6 @@
     ;}
     li {
         @apply
-        @apply
         marker:text-reality-yellow
     ;}
 </style>
