@@ -60,6 +60,11 @@ p, div {
   leading-[1.25rem]
 }
 
+ul {
+  @apply
+  list-disc
+}
+
 li {
   @apply
   pl-2

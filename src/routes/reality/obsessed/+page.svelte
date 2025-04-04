@@ -20,16 +20,15 @@
             studying Obsessed Agents in the interest
             of harnessing their focus and dedication
             toward more economical purposes. On the
-            occassion that an Agent's Obsession happens
-            to align with the <red>Agency's</red> purpose,
-            their productivity is unparalleled.
+            occasion that an Agent's Fixation happens
+            to align with our goals, their productivity is unparalleled.
         </p>
         <p>
             Unfortunately, data shows that these Agents
             have little control over which interests 
             they gravitate toward, and they are
             statistically much more likely to become
-            fixated on useless trivialities that generate
+            engrossed in useless trivialities that generate
             no revenue. Worse yet, these frivolous
             topics often occupy their focus during
             missions, leading to overlooked details
@@ -48,7 +47,7 @@
   
     const tableTitle = 'Fixation';
     const tableDesc = `
-      You are deeply obsessed with a particular interest, called your <b>Fixation</b>.
+      You are deeply obsessed with a particular interest, called your Fixation.
       Decide what it is by rolling on the table below or creating your own.`;
     const tableOptions = [
       'Pop Idol',
@@ -60,28 +59,28 @@
     const triggerTitle = 'Interest Mentioned!';
     const triggerDesc = `
       The GM may use Reality to have
-      something related to your <b>Fixation</b>
+      something related to your Fixation
       pop up around you (<i>an advertisement
       for new merch, someone sharing an
       incorrect fact, etc.</i>). If you ignore it, your
       attention will be consumed by it later:
       the relationship who least shares your interest loses <yellow>one Connection</yellow>.
       `;
-    const trackTitle = 'Faded Spark';
+    const trackTitle = 'Onto New Things';
     const trackDesc = `
       When you enthusiastically engross
       yourself in something unrelated to your
-      <b>Fixation</b>, mark the next empty
-      box on a four-box <yellow>Faded Spark</yellow> track. 
+      Fixation, mark the next empty
+      box on a four-box <yellow>Onto New Things</yellow> track. 
       When this happens while all boxes are marked, 
-      or when you're forced to abandon your <b>Fixation</b>
+      or when you're forced to abandon your Fixation
       for other reasons, you move on to new things. You must choose a new Reality.
     `;
   
     const releaseTitle = 'Hyperfocused';
     const releaseDesc = `
       When you are doing something that
-      engages with your <b>Fixation</b> or invokes
+      engages with your Fixation or invokes
       specialized knowledge gained from it,
       ignore all Burnout.
     `;
@@ -126,6 +125,10 @@
         mb-1
         border-reality-yellow
     ;}
+    li {
+        @apply
+        marker:text-reality-yellow
+    ;}
 </style>
 
 <div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
@@ -168,11 +171,10 @@
     </div>
     <div>
         <h2>Onboarding Questions</h2>
-        <ul class="space-y-1">
+        <ul class="space-y-1 pl-2">
             {#each onboarding as question}
-                <li class="flex items-center space-x-1">
-                    <ArrowRightSLineArrows class="size-[1rem] text-reality-yellow"/>
-                    <p>{question}</p>
+                <li>
+                    {question}
                 </li>
             {/each}
         </ul>
@@ -196,11 +198,10 @@
             closest to <yellow>6 Connection</yellow>. Give
             the other two <red>3</red> <yellow>Connection</yellow>.
         </p>
-        <ul>
+        <ul class="pl-2 space-y-1">
         {#each relationships as relationship}
-                <li class="flex items-center space-x-1">
-                    <ArrowRightSLineArrows class="size-[1rem] text-reality-yellow"/>
-                    <p><yellow>{relationship.q}</yellow> <i>(Examples: {relationship.examples})</i></p>
+                <li>
+                    <yellow>{relationship.q}</yellow> <i>(Examples: {relationship.examples})</i>
                 </li>
             {/each}
             </ul>
@@ -214,7 +215,7 @@
             <ArrowRightSLineArrows class="size-[1.25rem] text-reality-yellow mr-1"/>
             {#each track as i}
                 <div class={`flex justify-end items-end w-8 h-8
-                 p-0.5 border border-reality-yellow text-[0.9rem] leading-none ${i === 3 && 'text-agency-red'}`}>{i}</div>
+                 px-0.5 border border-reality-yellow text-[0.9rem] leading-none ${i === 3 && 'text-agency-red'}`}>{i}</div>
                 <div class="w-[1rem] h-[1px] bg-reality-yellow"></div>
             {/each}
             <CloseLargeLineSystem class="size-[1.25rem]"/>
