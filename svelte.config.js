@@ -5,7 +5,7 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
 	kit: {
 		adapter: adapter({
-			fallback: process.env.NODE_ENV === 'production' ? 'app.html' : 'index.html'
+			fallback: 'index.html'
 		}),
 	},
 	preprocess: [vitePreprocess()]
