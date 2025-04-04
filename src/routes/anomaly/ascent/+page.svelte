@@ -46,23 +46,15 @@
         desc: 'While you are unburdened, kick your heels off the ground and roll <b>Initiative</b>.',
         success: `
         <p>
-            <blue>On a success,</blue> you take off flying to perform
-            one of the following aerial stunts:
-        </p>
-        <ul>
-            <li>Maneuver around any obstacle.</li>
-            <li>Evade an attack.</li>
-            <li>Travel up to one mile in <red>3</red> seconds.</li>
-        </ul>
-        <p>
-            If you're still airborne after performing your stunt,
-            you can glide until your feet touch the ground.
+            <blue>On a success,</blue> you take off flying. Your initial burst of speed allows you
+            to fly up to a mile per second for <red>3</red> seconds, avoiding all attacks and obstacles
+            as you do so. If you're still airborne after <red>3</red> seconds, you enter a gentle glide
+            until your feet touch the ground.
         </p>
         `,
         additional: `
-          <blue>For every additional <red>3</red>,</blue> you can
-          perform an additional stunt immediately or at any time
-          during your glide.
+          <blue>For every additional <red>3</red>,</blue> you can get an additional burst of speed
+          either immediately or at any time during your glide.
         `,
         failure: `
           <red>On a failure,</red> you fly directly upward uncontrollably.
@@ -105,7 +97,7 @@
                 <blue>On every third <red>3</red>,</blue> choose one:
             </p>
             <ul>
-                <li>The object pierces through things it collides with without being damaged.</li>
+                <li>The object pierces through the next thing it collides with without being damaged.</li>
                 <li>You can operate the object while controlling it (e.g. press buttons, pull triggers).</li>
                 <li>The object leaves behind a trail of one of the following as it flies:
                 confetti; dense fog; pesticides; napalm; propaganda leaflets.</li>
