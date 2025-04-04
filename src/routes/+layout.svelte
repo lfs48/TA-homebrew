@@ -82,7 +82,7 @@
 {#snippet sidebarItem(name)}
     <a class="flex items-center space-x-1" href={`/${name}`}>
         <ArrowRightSLineArrows class="size-[1rem]"/>
-        <div class={`pb-0.5 ${isPath(name) && `border-b`}`}>{name}</div>
+        <div class={`pb-0.5 border-b ${isPath(name) ? 'border-zinc-200' : `border-zinc-800`}`}>{name}</div>
     </a>
 {/snippet}
 
@@ -97,7 +97,7 @@
             <div class="flex flex-col space-y-3">
                 <div class="flex items-center space-x-1 text-pentachoron">
                     <ArrowRightSLineArrows class="size-[1rem]"/>
-                    <a class={`pb-0.5 ${$page.url.pathname === '/' && `border-b`}`} href="/">home</a>
+                    <a class={`pb-0.5 border-b ${$page.url.pathname === '/' ? 'border-pentachoron' : 'border-zinc-800'}`} href="/">home</a>
                 </div>
                 {@render sidebarMenu('anomaly', anomalyLinks, 'text-anomaly-blue', 'border-anomaly-blue')}
                 {@render sidebarMenu('reality', realityLinks, 'text-reality-yellow', 'border-reality-yellow')}
