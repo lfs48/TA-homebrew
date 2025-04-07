@@ -1,23 +1,3 @@
-<script>
-    const txt = [
-        'Congratulations, General Manager!',
-        `
-            Your branch has been chosen to participate in <penta>Project Pentachoron</penta>,
-            an exciting new initiative that will extend the <red>Agency's</red> reach into
-            new dimensions.
-        `,
-        `
-            To opt your field team into <penta>Project Pentachoron</penta>, simply finish reading this sentence.
-        `
-    ];
-    const i = $state(0);
-    const j = $state(0);
-
-    function type() {
-        
-    }
-</script>
-
 <div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
     <div class="space-y-2 pb-4">
         <p class="pb-2">Congratulations, General Manager!</p>
@@ -38,5 +18,8 @@
             erroneously accessed this document, please coax your General Manager
             into visiting this page so that your access is retroactively justified.
         </p>
+    </div>
+    <div class="flex justify-center w-full">
+        <img class="" src="compatability.svg" />
     </div>
 </div>
