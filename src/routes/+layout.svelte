@@ -56,8 +56,8 @@
 {#snippet sidebarMenu(folder, links, textColor, borderColor)}
     <div class={`flex flex-col ${textColor}`}>
         <button 
-            class="flex items-center space-x-1 cursor-pointer"
-            onclick={!isPath(folder) ? ()=>setOpenFolder(folder) : ()=>{}}
+            class="flex items-center w-min space-x-1 cursor-pointer"
+            onclick={!isPath(folder) || !openFolders[folder] ? ()=>setOpenFolder(folder) : ()=>{}}
         >
             {#if openFolders[folder]}
                 <ArrowDownSLineArrows class="size-[1rem]"/>
@@ -109,7 +109,7 @@
                 {@render sidebarItem('credits')}
             </div>
         </aside>
-        <main class="w-full">
+        <main class="w-full h-full">
             {@render children()}
         </main>
     </div>
