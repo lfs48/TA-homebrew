@@ -107,6 +107,9 @@
             </div>
             <div class="space-y-3">
                 {@render sidebarItem('credits')}
+                <div class="pl-2 text-pentachoron">
+                    <p>1.0.0</p>
+                </div>
             </div>
         </aside>
         <main class="w-full h-full">
