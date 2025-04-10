@@ -5,7 +5,8 @@
 
 	import { page } from '$app/stores';
 
-	let { children } = $props();
+	let { children, data } = $props();
+    const { anomalySlugs, realitySlugs, competencySlugs } = data;
 
     let openFolders = $state({
         anomaly: false,
@@ -18,23 +19,9 @@
         openFolders[folder] = !openFolders[folder];
     }
 
-    const anomalyLinks = [
-        {
-            link: 'ascent',
-        },
-    ];
-
-    const realityLinks = [
-        {
-            link: 'obsessed',
-        },
-    ];
-
-    const competencyLinks = [
-        {
-            link: 'coach',
-        },
-    ];
+    const anomalyLinks = anomalySlugs.map(slug => ({link: slug}));
+    const realityLinks = realitySlugs.map(slug => ({link: slug}));
+    const competencyLinks = competencySlugs.map(slug => ({link: slug}));
 
     const extraLinks = [
         {

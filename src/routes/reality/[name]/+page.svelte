@@ -1,0 +1,136 @@
+<script>
+    import { ArrowRightSLineArrows, CloseLargeLineSystem } from 'svelte-remix';
+
+    import Triangle from '../../../components/triangle.svelte';
+
+    let { data } = $props();
+
+    const {
+        title,
+        tagline,
+        desc,
+        tableTitle,
+        tableDesc,
+        tableOptions,
+        triggerTitle,
+        triggerDesc,
+        trackTitle,
+        trackDesc,
+        releaseTitle,
+        releaseDesc,
+        onboarding,
+        relationships,
+    }  = data;
+
+    const track = [1,2,3,4];
+</script>
+
+<style>
+    @reference "../../../app.css";
+    h1, h2, h3 {
+        @apply
+        text-reality-yellow
+    ;}
+    h2 {
+        @apply
+        pb-1
+        mb-1
+        border-reality-yellow
+    ;}
+    li {
+        @apply
+        marker:text-reality-yellow
+    ;}
+</style>
+
+<div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
+    <div>
+        <div class="flex justify-between items-end">
+            <h1 class="pb-1">{title}</h1>
+            <h3 class="relative pr-24">
+                <span class="absolute -left-[0.25rem] top-[0.35rem] text-white text-[1.5rem] pl-[0.75rem]">R<yellow class="ml-[0.11rem]">EALITY</yellow></span>
+                <Triangle fillColor="#fcad30"/>
+            </h3>
+        </div>
+        <h3 class="pb-8">{tagline}</h3>
+        <p class="space-y-2">{@html desc}</p>
+    </div>
+    <div>
+        <h2>{tableTitle}</h2>
+        <p class="pb-3 ">{@html tableDesc}</p>
+        <ul class="space-y-1">
+            {#each tableOptions as option, i}
+                <li class="flex items-center space-x-1">
+                    <p class={`font-bold ${i === 2 && 'text-agency-red'}`}>{i+1}.</p>
+                    <p>{@html option}</p>
+                </li>
+            {/each}
+        </ul>
+    </div>
+    <div>
+        <h2>Reality Trigger</h2>
+        <p>
+            <yellow>{triggerTitle}</yellow>
+            {@html triggerDesc}
+        </p>
+    </div>
+    <div>
+        <h2>Burnout Release</h2>
+        <p>
+            <yellow>{releaseTitle}.</yellow>
+            {@html releaseDesc}
+        </p>
+    </div>
+    <div>
+        <h2>Onboarding Questions</h2>
+        <ul class="space-y-1 pl-2">
+            {#each onboarding as question}
+                <li>
+                    {question}
+                </li>
+            {/each}
+        </ul>
+    </div>
+    <div>
+        <h2>Relationships</h2>
+        <p class="pb-3">
+            You have three core
+            Relationships that are your
+            anchors to society. Identify them
+            by answering the questions
+            in your Relationship Matrix.
+            Once every Relationship has
+            been identified, assign each
+            to another <i>{`<Agent/player>`}</i>
+            at the table. When each
+            character is present in a scene
+            they will be portrayed by the
+            assigned <i>{`<Agent/player>`}</i>.
+            Give the Relationship you're
+            closest to <yellow>6 Connection</yellow>. Give
+            the other two <red>3</red> <yellow>Connection</yellow>.
+        </p>
+        <ul class="pl-2 space-y-1">
+        {#each relationships as relationship}
+                <li>
+                    <yellow>{relationship.q}</yellow> <i>(Examples: {relationship.examples})</i>
+                </li>
+            {/each}
+            </ul>
+    </div>
+    <div>
+        <h2>{trackTitle}</h2>
+        <p class="pb-3">
+            {@html trackDesc}
+        </p>
+        <div class="flex items-center">
+            <ArrowRightSLineArrows class="size-[1.25rem] text-reality-yellow mr-1"/>
+            {#each track as i}
+                <div class={`flex justify-end items-end w-8 h-8
+                 px-0.5 border border-reality-yellow text-[0.9rem] leading-none ${i === 3 && 'text-agency-red'}`}>{i}</div>
+                <div class="w-[1rem] h-[1px] bg-reality-yellow"></div>
+            {/each}
+            <CloseLargeLineSystem class="size-[1.25rem]"/>
+          </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import playwall from '../../../data/playwall.js';
+import playwall from '../../../data/current/playwall.js';
 
 export function load({ params }) {
 	return {
