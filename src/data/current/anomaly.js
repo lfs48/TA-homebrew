@@ -84,7 +84,7 @@ export default {
                         though external forces can steer it off track.
                     </p>
                     <p>
-                        Your control ends if the object lands or if you look away for more than 3 seconds.
+                        Your control ends if the object lands or if you look away for more than <red>3</red> seconds.
                         If the object is airborne when your control ends,
                         it follows its current trajectory to conclusion.
                     </p>
