@@ -5,23 +5,6 @@
 
     let { data } = $props();
 
-    const {
-        title,
-        tagline,
-        desc,
-        tableTitle,
-        tableDesc,
-        tableOptions,
-        triggerTitle,
-        triggerDesc,
-        trackTitle,
-        trackDesc,
-        releaseTitle,
-        releaseDesc,
-        onboarding,
-        relationships,
-    }  = data;
-
     const track = [1,2,3,4];
 </script>
 
@@ -46,20 +29,20 @@
 <div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
     <div>
         <div class="flex justify-between items-end">
-            <h1 class="pb-1">{title}</h1>
+            <h1 class="pb-1">{data.title}</h1>
             <h3 class="relative pr-24">
                 <span class="absolute -left-[0.25rem] top-[0.35rem] text-white text-[1.5rem] pl-[0.75rem]">R<yellow class="ml-[0.11rem]">EALITY</yellow></span>
                 <Triangle fillColor="#fcad30"/>
             </h3>
         </div>
-        <h3 class="pb-8">{tagline}</h3>
-        <p class="space-y-2">{@html desc}</p>
+        <h3 class="pb-8">{data.tagline}</h3>
+        <p class="space-y-2">{@html data.desc}</p>
     </div>
     <div>
-        <h2>{tableTitle}</h2>
-        <p class="pb-3 ">{@html tableDesc}</p>
+        <h2>{data.tableTitle}</h2>
+        <p class="pb-3 ">{@html data.tableDesc}</p>
         <ul class="space-y-1">
-            {#each tableOptions as option, i}
+            {#each data.tableOptions as option, i}
                 <li class="flex items-center space-x-1">
                     <p class={`font-bold ${i === 2 && 'text-agency-red'}`}>{i+1}.</p>
                     <p>{@html option}</p>
@@ -70,21 +53,21 @@
     <div>
         <h2>Reality Trigger</h2>
         <p>
-            <yellow>{triggerTitle}</yellow>
-            {@html triggerDesc}
+            <yellow>{data.triggerTitle}</yellow>
+            {@html data.triggerDesc}
         </p>
     </div>
     <div>
         <h2>Burnout Release</h2>
         <p>
-            <yellow>{releaseTitle}.</yellow>
-            {@html releaseDesc}
+            <yellow>{data.releaseTitle}.</yellow>
+            {@html data.releaseDesc}
         </p>
     </div>
     <div>
         <h2>Onboarding Questions</h2>
         <ul class="space-y-1 pl-2">
-            {#each onboarding as question}
+            {#each data.onboarding as question}
                 <li>
                     {question}
                 </li>
@@ -111,7 +94,7 @@
             the other two <red>3</red> <yellow>Connection</yellow>.
         </p>
         <ul class="pl-2 space-y-1">
-        {#each relationships as relationship}
+        {#each data.relationships as relationship}
                 <li>
                     <yellow>{relationship.q}</yellow> <i>(Examples: {relationship.examples})</i>
                 </li>
@@ -119,9 +102,9 @@
             </ul>
     </div>
     <div>
-        <h2>{trackTitle}</h2>
+        <h2>{data.trackTitle}</h2>
         <p class="pb-3">
-            {@html trackDesc}
+            {@html data.trackDesc}
         </p>
         <div class="flex items-center">
             <ArrowRightSLineArrows class="size-[1.25rem] text-reality-yellow mr-1"/>

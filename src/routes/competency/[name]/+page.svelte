@@ -2,18 +2,6 @@
     import Triangle from '../../../components/triangle.svelte';
     
 	let { data } = $props();
-    const {
-        title,
-        tagline,
-        desc,
-        directive,
-        demeritTrigger,
-        sanctioned,
-        reqName,
-        reqDesc,
-        assessment,
-        quote
-    } = data;
 </script>
 
 <style>
@@ -37,20 +25,20 @@
 <div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
     <div>
         <div class="flex justify-between items-end">
-            <h1>{title}</h1>
+            <h1>{data.title}</h1>
             <h3 class="relative pr-24">
                 <span class="absolute -left-[0.25rem] top-[0.35rem] text-white text-[1.5rem] pl-[0.75rem]">C<red class="ml-[0.11rem]">OMPETENCY</red></span>
                 <Triangle/>
             </h3>
         </div>
-        <h3 class="pb-8">{tagline}</h3>
-        <p class="space-y-2">{@html desc}</p>
+        <h3 class="pb-8">{data.tagline}</h3>
+        <p class="space-y-2">{@html data.desc}</p>
     </div>
     <div>
         <h2>Prime Directive</h2>
         <p>
-            <red>{directive}</red>
-            {demeritTrigger}, <red>receive 1 Demerit.</red>
+            <red>{data.directive}</red>
+            {data.demeritTrigger}, <red>receive 1 Demerit.</red>
         </p>
     </div>
     <div>
@@ -59,7 +47,7 @@
             Receive <red>1 Commendation</red> each time you:
         </p>
         <ul class="space-y-1 pb-3 pl-2">
-            {#each sanctioned as behavior}
+            {#each data.sanctioned as behavior}
                 <li>
                     {behavior}
                 </li>
@@ -75,8 +63,8 @@
     <div>
         <h2>Initial Requisition</h2>
         <p>
-            <red>{reqName}.</red>
-            {@html reqDesc}
+            <red>{data.reqName}.</red>
+            {@html data.reqDesc}
         </p>
     </div>
     <div>
@@ -102,7 +90,7 @@
                 department and any requests for
                 specific supervisors or coworkers.
             </p>
-            {#each assessment as question, i}
+            {#each data.assessment as question, i}
                 <div class="space-y-1">
                     <div>
                         <p>
@@ -129,6 +117,6 @@
         </div>
     </div>
     <div class="w-full flex justify-center pt-8 text-agency-red">
-        <p>"{quote}"</p>
+        <p>"{data.quote}"</p>
     </div>
 </div>
