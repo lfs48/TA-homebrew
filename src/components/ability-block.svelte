@@ -22,6 +22,7 @@
     div :global(ul) {
         @apply
         list-disc
+        pl-[0.5rem]
     ;}
     div :global(li) {
         @apply
