@@ -93,9 +93,10 @@
                 {@render sidebarItem('playwall')}
             </div>
             <div class="space-y-3">
+                {@render sidebarItem('changelog')}
                 {@render sidebarItem('credits')}
                 <div class="pl-2 text-pentachoron">
-                    <p>1.0.0</p>
+                    <p>1.0.1</p>
                 </div>
             </div>
         </aside>
