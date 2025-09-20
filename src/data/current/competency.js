@@ -44,7 +44,7 @@ export default {
       while discussing a mundane task that they 
       normally wouldn’t be able to perform.
       They will succeed at that task whenever they attempt it
-      for the rest of the mission, achieving the best possible results.
+      for the next 10 minutes, achieving the best possible results.
       Any injury they might  incur while performing that task is 
       deferred until it is completed.
     `,
