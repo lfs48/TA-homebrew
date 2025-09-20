@@ -3,7 +3,7 @@
 </script>
 
 <style>
-    @reference "../../../app.css";
+    @reference "../../../../app.css";
     h1, h2, h3 {
         @apply
         text-agency-red

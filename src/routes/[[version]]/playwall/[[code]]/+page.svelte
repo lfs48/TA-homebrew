@@ -1,12 +1,12 @@
 <script>
-    import { abilityBlock } from '../../../components/ability-block.svelte';
+    import { abilityBlock } from '../../../../components/ability-block.svelte';
     
 	let { data } = $props();
 </script>
 
 {#if data.document}
     {@render abilityBlock(data.document)}
-{:else}
+{:else if data.code && data.code.length > 0}
     <h2 class="font-bold
         text-agency-red
         leading-none

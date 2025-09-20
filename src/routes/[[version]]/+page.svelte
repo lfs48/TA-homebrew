@@ -1,4 +1,20 @@
+<script>
+    let { data } = $props();
+    
+    // Function to generate versioned URLs
+    function getVersionedPath(basePath) {
+        return data.version ? `${basePath}/${data.version}` : basePath;
+    }
+</script>
+
 <div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
+    {#if data.version}
+        <div class="bg-gray-700 border border-pentachoron text-pentachoron px-4 py-3 rounded mb-4">
+            <p>You are viewing materials for version: <strong>{data.version}</strong></p>
+            <a href="/" class="underline">View current version</a>
+        </div>
+    {/if}
+    
     <div class="space-y-2 pb-4">
         <p class="pb-2">Congratulations, General Manager!</p>
         <p>

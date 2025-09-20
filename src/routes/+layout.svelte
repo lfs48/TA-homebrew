@@ -1,42 +1,66 @@
 <script>
 	import { ArrowRightSLineArrows, ArrowDownSLineArrows } from 'svelte-remix';
+	import { setContext } from 'svelte';
 
 	import '../app.css';
 
 	import { page } from '$app/stores';
+	import { versionIndicator } from '../components/version-indicator.svelte';
 
 	let { children, data } = $props();
-    const { anomalySlugs, realitySlugs, competencySlugs } = data;
-
+    const availableVersions = ['1.1.0', '1.0.1', '1.0.0'];
+    const latestVersion = $derived(()=>availableVersions[0]);
+    // Extract version from current page
+    const currentVersion = $derived(() => {
+        const pathSegments = $page.url.pathname.split('/').filter(Boolean);
+        // Check if first segment is a version
+        const firstSegment = pathSegments[0];
+        return availableVersions.includes(firstSegment) ? firstSegment : null;
+    });
+    
+    // Set version context for child components
+    setContext('version', {
+        get currentVersion() { return currentVersion(); },
+        versionIndicator
+    });
+    
+    // Function to generate versioned paths for navigation
+    function getVersionedPath(basePath) {
+        const version = currentVersion();
+        const cleanPath = basePath.startsWith('/') ? basePath.slice(1) : basePath;
+        return version ? `/${version}/${cleanPath}` : `/${cleanPath}`;
+    }
+    
+    // Sidebar state management
     let openFolders = $state({
         anomaly: false,
         reality: false,
         competency: false,
-        extras: false,
+        extras: false
     });
-
+    
     function setOpenFolder(folder) {
         openFolders[folder] = !openFolders[folder];
     }
-
-    const anomalyLinks = anomalySlugs.map(slug => ({link: slug}));
-    const realityLinks = realitySlugs.map(slug => ({link: slug}));
-    const competencyLinks = competencySlugs.map(slug => ({link: slug}));
-
-    const extraLinks = [
-        {
-            link: 'connections',
-            color: 'text-reality-yellow border-reality-yellow',
-        },
-        {
-            link: 'requisitions',
-            color: 'text-agency-red border-agency-red',
-        },
-    ];
-
-	function isPath(path) {
-		return $page.url.pathname.includes(path);
-	}
+    
+    function isPath(path) {
+        return $page.url.pathname.includes(path);
+    }
+    
+    // Create link data from slugs
+    const anomalyLinks = $derived(
+        data.anomalySlugs ? data.anomalySlugs.map(slug => ({ link: slug, color: '' })) : []
+    );
+    const realityLinks = $derived(
+        data.realitySlugs ? data.realitySlugs.map(slug => ({ link: slug, color: '' })) : []
+    );
+    const competencyLinks = $derived(
+        data.competencySlugs ? data.competencySlugs.map(slug => ({ link: slug, color: '' })) : []
+    );
+    const extraLinks = $derived([
+        { link: 'connections', color: 'text-reality-yellow border-reality-yellow' },
+        { link: 'requisitions', color: 'text-agency-red border-agency-red' }
+    ]);
 
 </script>
 
@@ -58,7 +82,7 @@
                 <div class={`absolute top-0 left-[0.4rem] h-full border-l ${borderColor}`}></div>
                 {#each links as {link, color}}
                     <div class={`w-min pb-0.5 ${color} border-b ${isPath(link) ? (!color && borderColor) : 'border-zinc-800'}`}>
-                        <a href={`/${folder}/${link}`}>{link}</a>
+                        <a href={getVersionedPath(`${folder}/${link}`)}>{link}</a>
                     </div>
                 {/each}
             </div>
@@ -66,8 +90,8 @@
         </div>
 {/snippet}
 
-{#snippet sidebarItem(name)}
-    <a class="flex items-center space-x-1" href={`/${name}`}>
+{#snippet sidebarItem(name, versioned=true)}
+    <a class="flex items-center space-x-1" href={versioned ? getVersionedPath(`${name}`) : `/${name}`}>
         <ArrowRightSLineArrows class="size-[1rem]"/>
         <div class={`pb-0.5 border-b ${isPath(name) ? 'border-zinc-200' : `border-zinc-800`}`}>{name}</div>
     </a>
@@ -84,7 +108,7 @@
             <div class="flex flex-col space-y-3">
                 <div class="flex items-center space-x-1 text-pentachoron">
                     <ArrowRightSLineArrows class="size-[1rem]"/>
-                    <a class={`pb-0.5 border-b ${$page.url.pathname === '/' ? 'border-pentachoron' : 'border-zinc-800'}`} href="/">home</a>
+                    <a class={`pb-0.5 border-b ${$page.url.pathname === '/' || $page.url.pathname === `/${currentVersion()}` ? 'border-pentachoron' : 'border-zinc-800'}`} href={currentVersion() ? `/${currentVersion()}` : `/`}>home</a>
                 </div>
                 {@render sidebarMenu('anomaly', anomalyLinks, 'text-anomaly-blue', 'border-anomaly-blue')}
                 {@render sidebarMenu('reality', realityLinks, 'text-reality-yellow', 'border-reality-yellow')}
@@ -93,10 +117,10 @@
                 {@render sidebarItem('playwall')}
             </div>
             <div class="space-y-3">
-                {@render sidebarItem('changelog')}
-                {@render sidebarItem('credits')}
+                {@render sidebarItem('changelog', false)}
+                {@render sidebarItem('credits', false)}
                 <div class="pl-2 text-pentachoron">
-                    <p>1.0.1</p>
+                    <p>{currentVersion() || '1.1.0'}</p>
                 </div>
             </div>
         </aside>

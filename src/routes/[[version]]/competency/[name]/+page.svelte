@@ -1,11 +1,12 @@
 <script>
-    import Triangle from '../../../components/triangle.svelte';
+    import Triangle from '../../../../components/triangle.svelte';
+    import { versionIndicator } from '../../../../components/version-indicator.svelte';
     
 	let { data } = $props();
 </script>
 
 <style>
-    @reference "../../../app.css";
+    @reference "../../../../app.css";
     h1, h2, h3 {
         @apply
         text-agency-red
@@ -23,6 +24,9 @@
 </style>
 
 <div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
+    {#if data.version && data.version !== 'current'}
+        {@render versionIndicator(data.version)}
+    {/if}
     <div>
         <div class="flex justify-between items-end">
             <h1>{data.title}</h1>

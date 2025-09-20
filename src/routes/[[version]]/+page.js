@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
-import anomalies from '../data/current/anomaly.js';
-import realities from '../data/current/reality.js';
-import competencies from '../data/current/competency.js';
+import anomalies from '../../data/current/anomaly.js';
+import realities from '../../data/current/reality.js';
+import competencies from '../../data/current/competency.js';
 
 export function load({ params }) {
     const { version } = params;
