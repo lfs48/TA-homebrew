@@ -1,6 +1,7 @@
 <script>
     let { data } = $props();
     const { connections } = data;
+    import { versionIndicator } from '../../../../components/version-indicator.svelte';
 </script>
 
 <style>
@@ -22,6 +23,9 @@
 </style>
 
 <div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
+    {#if data.version && data.version !== 'current'}
+        {@render versionIndicator(data.version)}
+    {/if}
     <div class="space-y-2">
         <h1>Connection Bonuses</h1>
         <p>

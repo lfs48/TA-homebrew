@@ -3,6 +3,7 @@
     
     let { data } = $props();
     const { requisitions } = data;
+    import { versionIndicator } from '../../../../components/version-indicator.svelte';
 </script>
 
 <style>
@@ -31,6 +32,9 @@
 {/snippet}
 
 <div class="w-full h-full py-8 pl-8 pr-24 space-y-8">
+    {#if data.version && data.version !== 'current'}
+        {@render versionIndicator(data.version)}
+    {/if}
     <div class="space-y-2">
         <h1 class="text-[3rem]">Requisitions</h1>
         <p>
