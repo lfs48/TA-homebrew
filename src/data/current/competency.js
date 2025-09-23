@@ -32,7 +32,7 @@ export default {
     demeritTrigger: 'Each time you give a compliment',
     sanctioned: [
       'Reject an excuse.',
-      'Highlight a flaw.',
+      'Make someone feel inadequate.',
       'Push something past its limits.',
     ],
     reqName: 'Motivational Pamphlet',

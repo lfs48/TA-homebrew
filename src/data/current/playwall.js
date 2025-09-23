@@ -35,15 +35,17 @@ export default {
         type: 'Ability',
         title: 'Autopilot',
         desc:`
-            When you activate <blue>Flightpath</blue>, instead of locking eyes on the object,
-            you can lock eyes on a target or visualize one whose location you know.
-            When you do so, roll <b>Professionalism</b> instead of Persistence and use the following text:
+            Cup an object in your hands and describe a task that you want it to perform
+            that is appropriate for that kind of object (e.g. broom cleaning, letter delivering itself, etc).
+            Exhale onto it and roll <b>Professionalism.</b>
         `,
         success:`
             <p>
-                <blue>On a success,</blue> the object will autonomously guide itself toward the target,
-                avoiding all obstacles and mundane attempts to disturb it while doing so.
-                Choose whether the object safely arrives at the target or violently collides with it.
+                <blue>On a success,</blue> the object will animate and take flight
+                to perform the desired task. It does so mundanely and efficiently,
+                with skill comparable to an experienced professional. It will avoid
+                all obstacles and mundane attempts to disturb it while performing the task.
+                Once it is completed, it will gently fall back to the ground.
             </p>
         `,
         additional:`
@@ -51,16 +53,15 @@ export default {
                 <blue>On every third <red>3</red>,</blue> choose one:
             </p>
             <ul>
-                <li>You or one ally can hitch a ride.</li>
-                <li>It's guaranteed to arrive within 30 seconds.</li>
-                <li>It's disguised as a mundane flying animal of similar size until it arrives.</li>
+                <li>It performs the task with <blue>Anomalous</blue> efficiency, completing it in 30 seconds or less.</li>
+                <li>Describe an additional task for it to perform after it completes the previous one.</li>
+                <li>An additional nearby object of the same kind animates, either to assist with the same task or to perform a different one.</li>
             </ul>
         `,
         failure:`
             <p>
-                <red>On a failure,</red> the object's target becomes one that's incredibly
-                inconvenient for you. It will perform at least one physics-defying midair stunt
-                on its way there.
+                <red>On a failure,</red> the object animates as a hostile Minor <blue>Anomaly</blue>.
+                It immediately takes action against you or your allies before you can respond.
             </p>
         `,
         question:`
@@ -87,14 +88,14 @@ export default {
         success:`
             <p>
                 <blue>On a success,</blue> whatever space or structure you just fell through
-                is inverted. Wherever you landed is now at the top: the floor is now the ceiling,
-                last place is now first, etc.
+                is inverted along with its occupants. Wherever you landed is now at the top: 
+                the floor is now the ceiling, last place  gets the prize,
+                the private gives orders to the general, etc.
             </p>
         `,
-        tri:`
+        additional:`
             <p>
-                <red>On Triscendence,</red> everyone considers it to have
-                always been this way.
+                <blue>On every third <red>3</red>,</blue> choose a target to remain in place through the inversion.
             </p>
         `,
         failure:`
@@ -110,9 +111,6 @@ export default {
         type: 'Ability',
         title: 'Divebomb',
         desc:`
-            <p>
-                You always land gracefully and unhurt from a fall.
-            </p>
             <p>
                 As you fall from a height, choose a target beneath you to land on
                 and roll <b>Dynamism</b>.
@@ -135,14 +133,18 @@ export default {
                     <b><red>3</red> Harm:</b> More than <red>300</red> feet.
                 </li>
                 <li>
-                    <b>Five Harm:</b> An astronomical or anomalous height.
+                    <b>Five Harm:</b> An astronomical or <blue>Anomalous</blue> height.
                 </li>
             </ul>
+            <p>
+                You are unhurt by the fall and land gracefully.
+            </p>
         `,
         additional:`
             <p>
-                <blue>For each additional <red>3</red>,</blue> you can bounce once,
-                dealing the same Harm again to the target or to a different one near it.
+                <blue>On every third <red>3</red>,</blue> you can bounce onto another target,
+                causing it to receive the same Harm. You may bounce onto the same target
+                multiple times as long as consecutive bounces are onto different targets.
             </p>
         `,
         failure:`
@@ -187,39 +189,14 @@ export default {
                 simple favors for you in exchange for treats.
             </p>
             <p>
-                When you're in need of help, extend your arm out as a perch
-                and roll <b>Presence</b>.
-            </p>
-        `,
-        success:`
-            <p>
-                <blue>On a success,</blue> a bird of your choice (either an
-                individual bird or a particular species) arrives to help you.
-                It will perform one task you give it to the best of its ability
-                before leaving.
+                When you use <blue>Wings of Change</blue> to take an avian shape,
+                use  the following additional text:
             </p>
         `,
         additional:`
             <p>
-                <blue>On every third <red>3</red>,</blue> you can augment the bird
-                in one of the following ways while it's helping you.
-            </p>
-            <ul>
-                <li>You can see through its eyes and communicate with it telepathically.</li>
-                <li>It can outmaneuver any mundane foe or <blue>Minor Anomaly</blue>.</li>
-                <li>Any mundane person seeing it fly becomes fixated on it, ignoring
-                anything going on at ground level.</li>
-            </ul>
-        `,
-        tri:`
-            <red>On Triscendence,</red> the bird acts as your loyal companion for the rest of the mission.
-        `,
-        failure:`
-            <p>
-                <red>On a failure,</red> an ornery bird arrives to harass and torment you.
-                It will demand something from you and won't leave until you satisfy it.
-                If you hurt it, birds will shun you until you spend at least <red>3</red>
-                hours feeding birds at local parks.
+                <blue>For each additional <red>3</red>,</blue> you may choose a nearby ally
+                to also transform into a bird. You may choose the kind of bird independently for each target.
             </p>
         `,
         extra: [
@@ -227,9 +204,16 @@ export default {
                 type: 'desc',
                 text:`
                     <p>
-                        When you use <blue>Wings of Change</blue> to take an avian form, 
-                        you can activate the success effect of <blue>Flock Together</blue>,
-                        calling a bird of the same kind you turned into.
+                        Additionally, <blue>Liftoff</blue> gains the following extra text:
+                    </p>
+                `
+            },
+            {
+                type: 'desc',
+                text:`
+                    <p>
+                        Each time you get a burst of speed, each ally you've transformed with
+                        <blue>Wings of Change</blue> also gets one.
                     </p>
                 `
             }
@@ -291,7 +275,7 @@ export default {
         title: 'Hijack',
         desc:`
             You can trigger <blue>Flightpath</blue> and <blue>Autopilot</blue>
-            on anything airborne - not just objects, and not just things you threw yourself.
+            on any airborne object - not just ones you throw or hold yourself.
         `
     },
     H3: {
@@ -454,19 +438,14 @@ export default {
         `,
         success:`
             <p>
-                <blue>On a success,</blue> you unleash a surge of inner power. Add a number of <red>3s</red>
-                to the targeted roll equal to <red>triple</red> the number of <red>3s</red>
-                rolled for this ability. This effect can make a roll exceed six <red>3s</red>
-                and can potentially turn a <red>failure</red> into a <blue>success</blue>.
+                <blue>On a success,</blue> choose a quantity represented by a word or numeral
+                in the ability's rule text. Increase that quantity by an amount equal to
+                the number of <red>3s</red> rolled for this ability.
             </p>
         `,
-        tri:`
-            <red>On Triscendence,</red> the targeted roll achieves <red>Triscendence</red>
-            as well.
-        `,
         failure:`
-            <red>On a failure,</red> <red>triple</red> the amount of <blue>Chaos</blue>
-            generated by this roll and the targeted roll.
+            <red>On a failure,</red> all quantities represented by words or numerals
+            in the ability's rule text become zero.
         `
     },
     P2: {
@@ -565,15 +544,26 @@ export default {
         title: 'Superfly',
         desc:`
             <p>
-                Activating <blue>Liftoff</blue> no longer requires you to be unburdened.
-                During <blue>Liftoff's</blue> bursts of speed you can additionally:
+                When activating the success or <blue>For each additional <red>3</red></blue> effects of <blue>Liftoff</blue>, you may
+                substitute a burst of speed for a burst of any of the following other powers:
             </p>
             <ul>
-                <li>Break free of any physical restraints.</li>
-                <li>Pick up, carry, and throw any amount of weight. When you glide,
-                you can continue to carry any weight you've already picked up.</li>
-                <li>Intercept attacks aimed at other targets, taking them yourself.</li>
+                <li>
+                    <blue>Super Strength:</blue> You may immediately break free of any restraints.
+                    You can lift, carry, and throw any amount of weight for <red>3</red> seconds.
+                </li>
+                <li>
+                    <blue>Super Stability:</blue> The next time you would be hurt and/or forcibly displaced
+                    within <red>3</red> seconds, you are impervious to it.
+                </li>
+                <li>
+                    <blue>Super Senses:</blue> You can catch a view of anything you have line of sight to
+                    with perfect detail, or hear any one sound occuring within <red>3</red> miles with perfect clarity.
+                </li>
             </ul>
+            <p>
+                You may overlap different powers at the same time.
+            </p>
         `,
         question: 'Others look up to me because of...',
         answers: [
@@ -616,7 +606,7 @@ export default {
         type: 'Ability',
         title: 'Wings of Change',
         desc:`
-            While gliding through the air, flap your arms and roll <b>Duplicity</b>.
+            While airborne, flap your arms and roll <b>Duplicity</b>.
         `,
         success:`
             <p>

@@ -50,8 +50,19 @@ export default {
                 </p>
                 `,
                 additional: `
-                <blue>For every additional <red>3</red>,</blue> you can get an additional burst of speed
-                either immediately or at any time during your glide.
+                <p>
+                    <blue>For every additional <red>3</red>,</blue> choose one:
+                </p> 
+                <ul>
+                <li>
+                    You get an additional burst of speed either immediately
+                    or at any time during your glide.
+                </li>
+                <li>
+                    You can carry one other person or cumbersome object with you
+                    for the duration of your flight.
+                </li>
+                </ul>
                 `,
                 failure: `
                 <red>On a failure,</red> you fly directly upward uncontrollably.
@@ -78,10 +89,9 @@ export default {
                 `,
                 success: `
                     <p>
-                        <blue>On a success,</blue> you have control over the object’s 
-                        trajectory for as long as you’re looking at it. 
-                        You can freely direct its velocity and rotation, 
-                        though external forces can steer it off track.
+                        <blue>On a success,</blue> you can steer the object's flight trajectory
+                        for as long as you're looking at it. It maintains the velocity you launched it with.
+                        External forces can still influence it.
                     </p>
                     <p>
                         Your control ends if the object lands or if you look away for more than <red>3</red> seconds.
