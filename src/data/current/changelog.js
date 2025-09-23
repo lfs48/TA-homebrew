@@ -4,7 +4,8 @@ export default [
         date: '9/23/25',
         notes:`
             <ul>
-                <li><blue>Ascent:</blue> Added an additional '<blue>For Each Additional 3</blue>' option to <blue>Liftoff</blue>.</li>
+                <li><blue>Ascent:</blue> Added an additional '<blue>For Each Additional <red>3</red></blue>' option to <blue>Liftoff</blue>.</li>
+                <li><blue>Ascent:</blue> <blue>Flightpath</blue> now keeps the object at the velocity it was thrown at. An '<blue>On Every Third <red>3</red></blue>' option has been replaced with the ability to control the velocity.</li>
                 <li><red>Coach:</red> Changed a sanctioned behavior to be less readily fulfillable.</li>
                 <li><red>Coach:</red> The Motivational Pamphlet requisition now only guarantees success for 10 minutes rather than the rest of the mission.</li>
                 <li>Reworked Playwall documents <b>A2</b>, <b>F1</b>, <b>P1</b>, and <b>S1</b>.</li>

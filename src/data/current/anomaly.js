@@ -104,10 +104,9 @@ export default {
                         <blue>On every third <red>3</red>,</blue> choose one:
                     </p>
                     <ul>
+                        <li>You can accelerate and deccelerate the object at will while controlling it.</li>
                         <li>The object pierces through the next thing it collides with without being damaged.</li>
                         <li>You can operate the object while controlling it (e.g. press buttons, pull triggers).</li>
-                        <li>The object leaves behind a trail of one of the following as it flies:
-                        confetti; dense fog; pesticides; napalm; propaganda leaflets.</li>
                     </ul>
                 `,
                 failure: `
