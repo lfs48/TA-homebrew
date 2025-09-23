@@ -9,6 +9,19 @@
         list-disc
         pl-[0.5rem]
     ;}
+    h3 {
+        @apply
+        text-xl
+        mb-1
+        mt-4
+    ;}
+    h4  {
+        @apply
+        mb-1
+        mt-2
+        pl-8
+        ml-8
+    ;}
     div :global(li) {
         @apply
         mb-2
