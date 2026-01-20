@@ -1,20 +1,4 @@
 export default {
-    'magic-3-ball': {
-        title: 'Magic 3-Ball',
-        description: `
-            <p>
-                This oversized red billiard ball has an aperture overlooking an inky black void.
-                At any time during a mission when your team is faced with several branching choices
-                and can't make a decision, state your options to the ball as a numbered list and shake it.
-                The ball will randomly choose one of the options for you. From that point forward,
-                Reality will alter itself to produce disastrous consequences if you take
-                any course of action on the matter other than the chosen option.
-            </p>
-        `,
-        pricing: [
-            { name: 'Cost', cost: '10 Commendations' },
-        ]
-    },
     'positive-affirmations': {
         title: 'Positive Affirmations',
         description: `
@@ -59,7 +43,7 @@ export default {
                 you're currently on. You can rent this apartment for the duration of your mission.
             </p>
             <p>
-                Apartments are fully furnished and include basic utilities.
+                Apartments include basic furnishings and utilities.
                 The penthouse apartment also features luxury amenities
                 including an indoor pool, private theater,
                 and helipad (helicopter not included).

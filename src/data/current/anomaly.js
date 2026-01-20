@@ -73,11 +73,11 @@ export default {
                 answers: [
                     {
                         answer: 'Empowered.',
-                        code: 'S1',
+                        code: 'S4',
                     },
                     {
                         answer: 'Free.',
-                        code: 'W1',
+                        code: 'W2',
                     }
                 ],
             },
@@ -121,7 +121,7 @@ export default {
                     },
                     {
                         answer: 'Whimsical.',
-                        code: 'P2',
+                        code: 'P3',
                     }
                 ],
             },
@@ -152,11 +152,160 @@ export default {
                 answers: [
                     {
                         answer: 'On others.',
-                        code: 'P3',
+                        code: 'P4',
                     },
                     {
                         answer: `At where I'm landing.`,
                         code: 'D1',
+                    }
+                ],
+            },
+        ],
+    },
+    judgment: {
+        title: 'Judgment',
+        tagline: `And jury, and executioner.`,
+        desc:`
+          <p>
+            Judgment is the voice in the back of your head that tells you right from wrong.
+            Judgment is the strike of lightning sent from the heavens to purge the wicked.
+            Judgment is the feather upon the scale that weighs the soul.
+            Judgment is absolute, unyielding, and eternal.
+          </p>
+          <p>
+            These <blue>Anomalies</blue> act as arbiters of right and wrong, scrutinizing conduct
+            and enacting punishment. They operate in a milieu of guilt before innocence,
+            prescription before discretion, and retribution before mercy. They are often
+            born in prisons, elementary schools, and the back alley scenes of vigilantism.
+            Their presence is felt as a leaden aura, a sense of being watched from all directions,
+            forcing you to watch your every step.
+          </p>
+          <p>
+            Agents resonant with such Anomalies often have a rigid sense of justice,
+            and take it upon themselves to enforce it upon others.
+            As the <red>Agency's</red> mission is objectively morally correct,
+            this never causes any issues. If you find yourself working alongside a
+            Judgment Agent whose code of ethics seems to be at odds with our purpose
+            to Stabilize Reality, be aware that they are an impostor and should
+            be subdued immediately for transport to the Vault.
+          </p>
+        `,
+        abilities: [
+            {
+                title: 'I Know What You Did',
+                desc: 'When you make someone feel a pang of guilt, look them in the eye and say "I know what you did." Roll <b>Presence</b>.',
+                success: `
+                <p>
+                    <blue>On a success,</blue> the target’s greatest source of guilt
+                    comes to the forefront of their mind for as long as they’re in your presence.
+                    You learn what this is, and they know you know it.
+                    If you suggest an act of penance along one of the following lines, they will pursue it.
+                </p>
+                <ul>
+                    <li>Self-flagellation.</li>
+                    <li>Public confession.</li>
+                    <li>Making amends.</li>
+                </ul>
+                `,
+                additional: `
+                <p>
+                    <blue>On six or more <red>3s</red>,</blue> the target will undertake any arbitrary act of penance you describe.
+                </p> 
+                `,
+                failure: `
+                <red>On a failure,</red> you absolve the target’s guilt and assume it for yourself.
+                Whatever they believed themselves guilty of, you are somehow the one truly responsible for it.
+                Now <i>they</i> know what <i>you</i> did.
+                `,
+                question: `When I'm suspicious of someone, I...`,
+                answers: [
+                    {
+                        answer: 'Keep a close eye on them.',
+                        code: 'L1',
+                    },
+                    {
+                        answer: 'Go dig up some dirt.',
+                        code: 'B4',
+                    }
+                ],
+            },
+            {
+                title: 'Eye for an Eye',
+                desc: `
+                    When you or a nearby ally is hurt or wronged,
+                    give a thumbs down to the perpetrator and roll <b>Dynamism</b>.
+                `,
+                success: `
+                    <p>
+                        <blue>On a success,</blue> you are empowered to inflict the same wrong or hurt
+                        onto the perpetrator. No one will stop you, and those who are witness
+                        to the event will approve of your actions.
+                    </p>
+                `,
+                additional: `
+                    <p>
+                        <blue>On every third <red>3</red>,</blue> you may inflict an additional instance
+                        of that hurt or wrong to the perpetrator.
+                    </p>
+                `,
+                failure: `
+                    <red>On a failure,</red> the same hurt is caused again to the one who was hurt,
+                    to the perpetrator, to you (if you weren't already the one hurt), or to a random bystander.
+                `,
+                question: 'When injustice is done, I...',
+                answers: [
+                    {
+                        answer: 'Hunt down those responsible.',
+                        code: 'C1',
+                    },
+                    {
+                        answer: 'Apply the full force of the law.',
+                        code: 'R1',
+                    }
+                ],
+            },
+            {
+                title: 'Fair Share',
+                desc: `
+                Choose two targets near you and identify a quantifiable property
+                that one has more of than the other (e.g. length, saturation of the color yellow,
+                christmas ornamentation). Clap your hands and roll <b>Empathy</b>.
+                `,
+                success: `
+                <blue>On a success,</blue> the property is redistributed evenly between the two targets
+                such that they each have an equal amount of it. The effect lasts until you separate your hands.
+                `,
+                additional: `
+                    <p>
+                        <blue>On every third <red>3</red>,</blue> choose one:
+                    </p>
+                    <ul>
+                        <li>
+                        You may choose an additional target.
+                        Chosen properties are equally redistributed among all targets.
+                        </li>
+                        <li>
+                        You may choose an additional property to equally redistribute between the targets.
+                        </li>
+                        <li>
+                        The effect lasts an additional <red>30</red> minutes after you separate your hands.
+                        </li>
+                    </ul>
+                `,
+                failure: `
+                <red>On a failure,</red> the property is halved in the target with less or
+                doubled in the target with more, chosen at random. This lasts until
+                you touch both targets at the same time.
+                `,
+                question: `If there's a disagreement in the group, I will...`,
+                answers: [
+                    {
+                        answer: 'Find consensus.',
+                        code: 'S3',
+                    },
+                    {
+                        answer: `Suggest splitting up.`,
+                        code: 'S1',
                     }
                 ],
             },

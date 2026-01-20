@@ -22,10 +22,10 @@
     <div class="grid grid-cols-10 gap-y-4 pb-8">
         {#each data.codes as code}
             <a href={getVersionedPlaywallPath(code)} 
-            class={`w-min border-b text-[1.25rem] font-bold leading-none
+            class={`w-min border-b text-[1.25rem] font-bold leading-none whitespace-nowrap
             ${code === slug ? 'text-anomaly-blue border-anomaly-blue' : 'text-zinc-200 border-zinc-200'}
             `}>
-            {code}</a>
+            /{code}</a>
         {/each}
     </div>
     <div>

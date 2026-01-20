@@ -8,7 +8,7 @@ export default {
                 around a singular overwhelming interest.
                 It might be a piece of media, hobby,
                 lifestyle, religion, or something more esoteric.
-                The uniting factor is that this obsession
+                The uniting factor is that this Obsession
                 commands the Agent's attention at all times
                 and shapes their perception of the world
                 around itself.
@@ -55,7 +55,7 @@ export default {
         ],
         triggerTitle: 'Interest Mentioned!',
         triggerDesc:`
-            The GM may use <yellow>Reality Trigger</yellow> to have
+            The GM may use Reality to have
             something related to your Fixation
             pop up around you (<i>an advertisement
             for new merch, someone sharing an
@@ -100,95 +100,6 @@ export default {
             q: `Who can't quite follow along with your rants?`,
             examples: `
                 Chauffeur, Tattoo Artist, Jujitsu Sparring Partner`,
-            },
-        ],
-    },
-    daredevil: {
-        title: 'Daredevil',
-        tagline: 'All in, all the time.',
-        desc: `
-            <p>
-                Daredevil Agents are compulsive risk-seekers.
-                They crave danger whether physical, emotional,
-                financial, or existential. For some, it may be that they've 
-                become so desensitized to ordinary stimulus
-                that must chase dangerous extremes to feel alive;
-                perhaps others are simply graced with absurd luck
-                that emboldens them to throw caution to the wind.
-                In each case, their common trait is a wildly skewed
-                sense of risk-reward that continually strings them
-                along into reckless behavior.
-            </p>
-            <p>
-                It might appear that such Agents would present a liability
-                to The <red>Agency</red>, and this is not strictly incorrect:
-                their reckless behavior does usually result in higher overhead costs;
-                their lack of caution is a frequent source of Loose Ends;
-                and their need to chase thrills can often lead them
-                to snatch defeat from the jaws of victory.
-            </p>
-            <p>
-                However, field teams are often faced with situations
-                that require bold and decisive action. In these moments,
-                the Daredevil's willingness to face the odds fearlessly
-                is an invaluable asset. We hope that their utter lack of regard
-                for their own wellbeing can serve as inspiration
-                to their more self-interested colleagues.
-            </p>
-        `,
-        tableTitle: 'Go-to Thrill',
-        tableDesc: `
-            Decide your preferred method of courting danger by rolling on the table below or creating your own.
-        `,
-        tableOptions: [
-            'Motorsports',
-            'Cards & Dice',
-            `Free Climbing`,
-            'Cryptocurrency',
-        ],
-        triggerTitle: 'Double Dare.',
-        triggerDesc:`
-            The GM may use <yellow>Reality Trigger</yellow> to present you
-            a risky opportunity with an enticing reward. 
-            If you fold, you'll lose face:
-            the Relationship whose admiration you most crave
-            loses <yellow>one Connection</yellow>.
-        `,
-        trackTitle: `Know When to Fold 'Em`,
-        trackDesc:`
-            When you choose a safe option over a dangerous one,
-            mark the next empty box on a four-box 
-            <yellow>Know When to Fold 'Em</yellow> track. 
-            When this happens while all boxes are marked, 
-            or when consequences you can't afford come crashing down on you,
-            your gambling days are gone. You must choose a new Reality.
-        `,
-        releaseTitle: 'Adrenaline Rush',
-        releaseDesc: `
-            When you are doing something that
-            puts you in immediate peril,
-            ignore all <b>Burnout</b>.
-        `,
-        onboarding: [
-            `What's the closest you've come to dying?`,
-            `What would you do if you won the lottery?`,
-            `What's your most controversial opinion?`,
-        ],
-        relationships: [
-            {
-            q: `Who inspires you to dream bigger?`,
-            examples: `
-                Personal Trainer, Financial Fraudster, Poker World Series Champion`,
-            },
-            {
-            q: `Who only likes you when you're winning?`,
-            examples: `
-                Distant Father, The Paparazzi, Streamer Who Really Loves You`,
-            },
-            {
-            q: `Who bears the burden of your losses?`,
-            examples: `
-                Social Media Account Manager, Spouse with a Real Job, Guardian Angel`,
             },
         ],
     },

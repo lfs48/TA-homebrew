@@ -10,7 +10,7 @@ export function load({ params }) {
     if (version && version !== 'current') {
         // You might want to check if the version directory exists
         // This is a simple check - you could make it more robust
-        const availableVersions = ['1.0.0', '1.0.1', '1.1.0']; // or read from filesystem
+        const availableVersions = ['1.0.0', '1.0.1', '1.1.0', '2.0.0']; // or read from filesystem
         if (!availableVersions.includes(version)) {
             throw error(404, `Version '${version}' not found`);
         }

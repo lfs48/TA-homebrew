@@ -8,7 +8,7 @@
 	import { versionIndicator } from '../components/version-indicator.svelte';
 
 	let { children, data } = $props();
-    const availableVersions = ['1.1.0', '1.0.1', '1.0.0'];
+    const availableVersions = ['2.0.0', '1.1.0', '1.0.1', '1.0.0'];
     const latestVersion = $derived(()=>availableVersions[0]);
     // Extract version from current page
     const currentVersion = $derived(() => {
@@ -120,7 +120,7 @@
                 {@render sidebarItem('changelog', false)}
                 {@render sidebarItem('credits', false)}
                 <div class="pl-2 text-pentachoron">
-                    <p>{currentVersion() || '1.1.0'}</p>
+                    <p>{currentVersion() || '2.0.0'}</p>
                 </div>
             </div>
         </aside>

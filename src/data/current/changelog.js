@@ -1,5 +1,18 @@
 export default [
-        {
+    {
+        version: '2.0.0',
+        date: '1/?/25',
+        notes:`
+            <ul>
+                <li>Added the <blue>Judgment Anomaly</blue>, <yellow>Daredevil Reality</yellow>, and <red>Quant Competency</red>.</li>
+                <li><red>Requisitions:</red> Added the <red>Magic 3 Ball</red>.</li>
+                <li><yellow>Connection Bonuses:</yellow> Added <yellow>Furtive</yellow>, <yellow>Herblarist</yellow>, and <yellow>Radical</yellow>.</li>
+                <li>Added a "/" character prefix to all Playwall codes to uniquely identify them.</li>
+                <li>Added Playwall document <penta>[/F12]</penta></li>.
+            </ul>
+        `,
+    },
+    {
         version: '1.1.0',
         date: '9/23/25',
         notes:`

@@ -75,7 +75,7 @@
     </div>
 {/snippet}
 
-{#snippet abilityBlock({title, desc, success, additional, tri, failure, extra, question, answers})}
+{#snippet abilityBlock({title, desc, success, additional, tri, failure, extra, questionContext, question, answers, trackContext, track})}
     <div class="space-y-3">
         <h2>{title}</h2>
         {@render descSnip(desc)}
@@ -98,6 +98,9 @@
         {/if}
         {#if question}
             <div class="pt-2 space-y-1">
+                {#if questionContext}
+                    <p class="italic text-anomaly-blue">{@html questionContext}</p>
+                {/if}
                 <p><blue class="pr-1">Q: </blue>{@html question}</p>
                 <div class="space-y-0.5">
                     {#each answers as {answer, boxes=3, code}}
@@ -107,10 +110,21 @@
                             {#each [...Array(boxes).keys()]}
                                 <div class="size-4 border border-anomaly-blue"></div>
                             {/each}
-                            <blue class="pl-1 text-[1.1rem] leading-none">{code}</blue>
+                            <a href={`/playwall/${code}`} class="ml-1 flex items-center">
+                                <blue class="text-[1.1rem] leading-none">/{code}</blue>
+                            </a>
                         </div>
                     {/each}
                 </div>
+            </div>
+        {/if}
+        {#if track}
+            <p class="italic text-anomaly-blue">{@html track.description}</p>
+            <div class="flex items-center space-x-1 pb-0.5">
+                <ArrowRightSLineArrows class="size-[1rem] text-anomaly-blue"/>
+                {#each [...Array(track.length).keys()]}
+                    <div class="size-4 border border-anomaly-blue"></div>
+                {/each}
             </div>
         {/if}
     </div>

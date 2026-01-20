@@ -55,20 +55,6 @@ export default {
             </p>
         `,
     },
-    'furtive':{
-        title: 'Furtive',
-        description: `
-            <p>
-            This person is so easily forgotten.
-            Once during your mission when they enter a scene,
-            you can choose to have them go completely
-            unnoticed and unremarked by all mundane people 
-            for as long as they're present. If they do something
-            that forcibly draws attention,
-            they won't be remembered afterward.
-            </p>
-        `,
-    },
     'gaslighter': {
         title: 'Gaslighter',
         description: `
@@ -79,20 +65,7 @@ export default {
             of something that's blatantly untrue,
             and the targets will believe it. If you do anything later
             to expose or contradict the lie, you lose
-            <yellow>one Connection</yellow> with this <yellow>Relationship</yellow>.
-            </p>
-        `,
-    },
-    'herblarist': {
-        title: 'Herblarist',
-        description: `
-            <p>
-                This person has extensive knowledge of medicinal plants.
-                Once per mission, you can describe a mundane illness or injury (short of death) to them
-                and they will prepare a specialized herbal remedy to treat it.
-                Simple maladies will improve immediately;
-                more severe or complex ones may take longer or cure imperfectly.
-                The dose is only sufficient for one person.
+            <yellow>one Connection</yellow> with this Relationship.
             </p>
         `,
     },
@@ -108,24 +81,8 @@ export default {
             developments to you. Should they witness anything
             <blue>Anomalous</blue>, their paranoid nature
             will keep them from spreading that knowledge:
-            their <b>Loose End</b> count is capped 
-            at one while this <b>Bonus</b> is active.
-            </p>
-        `,
-    },
-    'radical': {
-        title: 'Radical',
-        description: `
-            <p>
-                This person hates <i>The Man</i>, man!
-                Once during your mission, you can tell them
-                about a mundane authority figure that's keeping you down.
-                They will organize a disruptive operation
-                against it, preventing it from directly interfering
-                with your activities for the rest of the mission.
-                If this <yellow>Relationship</yellow> later find out you collaborated
-                or compromised with that authority, 
-                you lose <yellow>one Connection</yellow>.
+            their <b>Loose End</b> count will not grow
+            beyond one while this <b>Bonus</b> is active.
             </p>
         `,
     },
