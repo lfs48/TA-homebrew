@@ -8,7 +8,7 @@ export default [
                 <li><red>Requisitions:</red> Added the <red>Magic 3 Ball</red>.</li>
                 <li><yellow>Connection Bonuses:</yellow> Added <yellow>Furtive</yellow>, <yellow>Herblarist</yellow>, and <yellow>Radical</yellow>.</li>
                 <li>Added a "/" character prefix to all Playwall codes to uniquely identify them.</li>
-                <li>Added Playwall document <penta>[/F12]</penta></li>.
+                <li>Added Playwall document <penta>[/F12]</penta>.</li>
             </ul>
         `,
     },
