@@ -1,7 +1,7 @@
 export default [
     {
         version: '2.0.0',
-        date: '1/?/25',
+        date: '1/20/26',
         notes:`
             <ul>
                 <li>Added the <blue>Judgment Anomaly</blue>, <yellow>Daredevil Reality</yellow>, and <red>Quant Competency</red>.</li>
